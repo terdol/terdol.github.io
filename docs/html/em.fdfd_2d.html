@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>em.fdfd_2d package &#8212; mwtoolbox 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="em.mode_matching package" href="em.mode_matching.html" />
+    <link rel="prev" title="em package" href="em.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="em.mode_matching.html" title="em.mode_matching package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="em.html" title="em package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >src</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="em.html" accesskey="U">em package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">em.fdfd_2d package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="em-fdfd-2d-package">
+<h1>em.fdfd_2d package<a class="headerlink" href="#em-fdfd-2d-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-em.fdfd_2d.fdfd_2d">
+<span id="em-fdfd-2d-fdfd-2d-module"></span><h2>em.fdfd_2d.fdfd_2d module<a class="headerlink" href="#module-em.fdfd_2d.fdfd_2d" title="Permalink to this heading">¶</a></h2>
+<p>Referans: A compact 2-D full-wave finite-difference frequency-domain method for general guided wave structures.pdf
+A Compact 2-D FDFD Method for Modeling Microstrip Structures With Nonuniform Grids and Perfectly Matched Layer.pdf
+Lecture 12 – Finite-Difference Analysis of Waveguides (CEM Lectures) (Sadece matris boyutunu küçültmekte kullanıldı)</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.fdfd_2d.</span></span><span class="sig-name descname"><span class="pre">fdfd_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.addpml">
+<span class="sig-name descname"><span class="pre">addpml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmllayers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.addpml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add PML (perfectly matched layers) and return modified grid and permittivity arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pmllayers</strong> (<em>list of int</em>) – Number of PML layers x1,x2,y1,y2.</p></li>
+<li><p><strong>dx</strong> (<em>list of float</em>) – lengths of x-oriented grid cells</p></li>
+<li><p><strong>dy</strong> (<em>list of float</em>) – lengths of y-oriented grid cells</p></li>
+<li><p><strong>er</strong> (<em>2-d array of float</em>) – Dielectric permittivity array</p></li>
+<li><p><strong>erxx</strong> (<em>2-d array of float</em>) – Average dielectric permittivities at x-oriented grid edges</p></li>
+<li><p><strong>eryy</strong> (<em>2-d array of float</em>) – Average dielectric permittivities at y-oriented grid edges</p></li>
+<li><p><strong>erzz</strong> (<em>2-d array of float</em>) – Average dielectric permittivities at z-oriented grid edges</p></li>
+<li><p><strong>metalnodesx</strong> (<em>list of 2-tuples of int</em>) – indices of x-oriented grid edges</p></li>
+<li><p><strong>metalnodesy</strong> (<em>list of 2-tuples of int</em>) – indices of y-oriented grid edges</p></li>
+<li><p><strong>metalnodesz</strong> (<em>list of 2-tuples of int</em>) – indices of z-oriented grid edges</p></li>
+<li><p><strong>currentloops</strong> (<em>list</em>) – Indices of grid edges used to calculate current</p></li>
+<li><p><strong>vlines</strong> (<em>list</em>) – Field component and cell indices that are used to calculate voltage</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.exn">
+<span class="sig-name descname"><span class="pre">exn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.exn" title="Permalink to this definition">¶</a></dt>
+<dd><p>indice of Ex(i,j) in field vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.eyn">
+<span class="sig-name descname"><span class="pre">eyn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.eyn" title="Permalink to this definition">¶</a></dt>
+<dd><p>indice of Ey(i,j) in field vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.fdfd_mesh">
+<span class="sig-name descname"><span class="pre">fdfd_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.fdfd_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create FDFD mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>boxwidth</strong> (<em>float</em>) – Width of metal box.</p></li>
+<li><p><strong>boxheight</strong> (<em>float</em>) – Height of metal box.</p></li>
+<li><p><strong>xres</strong> (<em>float</em>) – Resolution along x-axis.</p></li>
+<li><p><strong>yres</strong> (<em>float</em>) – Resolution along y-axis</p></li>
+<li><p><strong>parts</strong> (<em>list</em>) – List of parts</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple containing the following elements:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>dx, 1-d array containing the length of grid cells along x</p></li>
+<li><p>dy, 1-d array containing the length of grid cells along y</p></li>
+<li><p>er, dielectric permittivity 2-d array</p></li>
+<li><p>erxx, average dielectric permittivity 2-d array along x</p></li>
+<li><p>eryy, average dielectric permittivity 2-d array along y</p></li>
+<li><p>erzz, average dielectric permittivity 2-d array along z</p></li>
+<li><p>metalnodesx, indices of x-oriented grid edges</p></li>
+<li><p>metalnodesy, indices of y-oriented grid edges</p></li>
+<li><p>metalnodesz, indices of z-oriented grid edges</p></li>
+<li><p>currentloops, indices of grid edges used to calculate current</p></li>
+<li><p>vlines, Field component and cell indices that are used to calculate voltage</p></li>
+</ol>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.fdfd_solve">
+<span class="sig-name descname"><span class="pre">fdfd_solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.fdfd_solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solves the FDFD problem. To reduce matrix dimensions, instead of classical equation of Ax=Lx, PQx=Lx formulation is used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.hxn">
+<span class="sig-name descname"><span class="pre">hxn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.hxn" title="Permalink to this definition">¶</a></dt>
+<dd><p>indice of Hx(i,j) in field vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.hyn">
+<span class="sig-name descname"><span class="pre">hyn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.hyn" title="Permalink to this definition">¶</a></dt>
+<dd><p>indice of Hy(i,j) in field vector</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.microstrip">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">microstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dielheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.microstrip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.multilayer">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multilayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dielthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmllayers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.multilayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multilayer substrate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dielthickness</strong> (<em>list</em>) – tabandan başlayarak yukarı dogru sirasiyla dielektriklerin kalinliklarinin listesi</p></li>
+<li><p><strong>epsilon</strong> (<em>list</em>) – tabandan başlayarak yukarı dogru sirasiyla dielektriklerin katsayilarinin listesi</p></li>
+<li><p><strong>metals</strong> (<em>list</em>) – şu elemanlardan oluşan dizi [metalheight, metalwidth, metalthickness, metaloffset]</p></li>
+<li><p><strong>metalheight</strong> (<em>float</em>) – metalin alt yüzeyinin yüksekliği</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_cloops">
+<span class="sig-name descname"><span class="pre">plot_cloops</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_cloops" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_field">
+<span class="sig-name descname"><span class="pre">plot_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Ex'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_field" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>surface</strong> (<em>bool</em>) – if True, use contourf, else streamplot</p></li>
+<li><p><strong>comp</strong> (<em>str</em>) – “Ex”,”Ey”…</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_grids">
+<span class="sig-name descname"><span class="pre">plot_grids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_grids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_parts">
+<span class="sig-name descname"><span class="pre">plot_parts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_parts" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ekran</strong> – Matplotlib Axes object</p></li>
+<li><p><strong>solid</strong> (<em>bool</em>) – if True, use fill=true, else fill=false</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_pml">
+<span class="sig-name descname"><span class="pre">plot_pml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_pml" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ekran</strong> – Matplotlib Axes object</p></li>
+<li><p><strong>solid</strong> (<em>bool</em>) – if True, use fill=true, else fill=false</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.plot_vline">
+<span class="sig-name descname"><span class="pre">plot_vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ekran</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.plot_vline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.powerflow">
+<span class="sig-name descname"><span class="pre">powerflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.powerflow" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comp</strong> – “Ex”,”Ey”…</p></li>
+<li><p><strong>surface</strong> – if 1, use contourf, else streamplot</p></li>
+<li><p><strong>v</strong> – (Ev, Hv)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.sigma">
+<span class="sig-name descname"><span class="pre">sigma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlayer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.sigma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.stripline">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stripline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.stripline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.suspended">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">suspended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dielthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metalthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.suspended" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.sx">
+<span class="sig-name descname"><span class="pre">sx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.sx" title="Permalink to this definition">¶</a></dt>
+<dd><p>sigma.arr : dizi, hucre boyutlari
+sigma.nlayer : list, bastan ve sondan pml layer sayisi</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.sy">
+<span class="sig-name descname"><span class="pre">sy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.sy" title="Permalink to this definition">¶</a></dt>
+<dd><p>sigma.arr : dizi, hucre boyutlari
+sigma.nlayer : list, bastan ve sondan pml layer sayisi</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.fdfd_2d.waveguide">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">waveguide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxwidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxheight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dielthickness</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmllayers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.fdfd_2d.waveguide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates rectangular waveguide problem. Multilayer function is not used because of the definition of voltage line wihtout any metal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dielthickness</strong> (<em>list</em>) – tabandan başlayarak yukarı dogru sirasiyla dielektriklerin kalinliklarinin listesi</p></li>
+<li><p><strong>epsilon</strong> (<em>list</em>) – tabandan başlayarak yukarı dogru sirasiyla dielektriklerin katsayilarinin listesi</p></li>
+<li><p><strong>metalwidth</strong> (<em>float</em>) – object</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.getindice">
+<span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.fdfd_2d.</span></span><span class="sig-name descname"><span class="pre">getindice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dizi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.getindice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the 1-based indice of cell in dizi in which point coordinate cc resides.
+The length of first pml cells of array dizi are ignored. But calculated
+indice contains these cells.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cc</strong> (<em>float</em>) – coordinate of point</p></li>
+<li><p><strong>dizi</strong> (<em>(</em><em>list</em><em>, </em><em>np.ndarray</em><em>)</em>) – array of cell dimensions</p></li>
+<li><p><strong>pml</strong> (<em>int</em><em>,</em><em>optional</em>) – number of pml cells at the beginning of the array. Default is 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1-based indice of the cell, cc resides in.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="em.fdfd_2d.fdfd_2d.getindiceordered">
+<span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.fdfd_2d.</span></span><span class="sig-name descname"><span class="pre">getindiceordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumsumarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.fdfd_2d.getindiceordered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Faster alternative to getindice, but works only with array of node coordinates instead of array of cell lengths. This array can be generated by cumsum function of numpy. The coordinate of starting node (0) is not included in this array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cc</strong> (<em>float</em>) – coordinate of point</p></li>
+<li><p><strong>cumsumarray</strong> (<em>np.ndarray</em>) – cumulative sum of array of cell dimensions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1-based indice of the cell, cc resides in.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>getindiceordered(5.5, np.cumsum(np.ones(10)))=6</p>
+</dd></dl>
+
+</section>
+<section id="module-em.fdfd_2d.grid3">
+<span id="em-fdfd-2d-grid3-module"></span><h2>em.fdfd_2d.grid3 module<a class="headerlink" href="#module-em.fdfd_2d.grid3" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.grid3.</span></span><span class="sig-name descname"><span class="pre">CartesianGrid</span></span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.SetUnit">
+<span class="sig-name descname"><span class="pre">SetUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.SetUnit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.customgrid">
+<span class="sig-name descname"><span class="pre">customgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.customgrid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – subregion numarasi</p></li>
+<li><p><strong>rmax</strong> (<em>float</em>) – maximum ratio between neighboring grids</p></li>
+<li><p><strong>shape</strong> (<em>int</em>) – 0- fine-coarse
+1- coarse-fine
+2- fine-coarse-fine
+3- uniform</p></li>
+<li><p><strong>policy</strong> (<em>int</em>) – 0- minimum number of grids
+1- minimum ratio, smoother transition</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.findsubregions">
+<span class="sig-name descname"><span class="pre">findsubregions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kritikx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kritiky</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kritikz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.findsubregions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.get_grids_sub_i">
+<span class="sig-name descname"><span class="pre">get_grids_sub_i</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.get_grids_sub_i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.get_nof_sub">
+<span class="sig-name descname"><span class="pre">get_nof_sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eksen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.get_nof_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.get_subregion_index_of_point">
+<span class="sig-name descname"><span class="pre">get_subregion_index_of_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.get_subregion_index_of_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.getsubregion">
+<span class="sig-name descname"><span class="pre">getsubregion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.getsubregion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.getsubregion_p">
+<span class="sig-name descname"><span class="pre">getsubregion_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.getsubregion_p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.loadfromfile">
+<span class="sig-name descname"><span class="pre">loadfromfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dosya</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.loadfromfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.nu_grid">
+<span class="sig-name descname"><span class="pre">nu_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deltax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deltaz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.nu_grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.nugrid">
+<span class="sig-name descname"><span class="pre">nugrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.nugrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nonuniform grid generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rmax</strong> (<em>float</em>) – Maximum ratio between neighboring grids</p></li>
+<li><p><strong>length</strong> (<em>float</em>) – total length</p></li>
+<li><p><strong>shape</strong> (<em>int</em>) – 0- fine-coarse
+1- coarse-fine
+2- fine-coarse-fine
+3- uniform</p></li>
+<li><p><strong>policy</strong> (<em>int</em>) – 0- minimum number of grids
+1- minimum ratio, smoother transition</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.optimizegrids">
+<span class="sig-name descname"><span class="pre">optimizegrids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.optimizegrids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.reshapegrid">
+<span class="sig-name descname"><span class="pre">reshapegrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.reshapegrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.return_subregion_params">
+<span class="sig-name descname"><span class="pre">return_subregion_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.return_subregion_params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.set_number_of_abc_layers">
+<span class="sig-name descname"><span class="pre">set_number_of_abc_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.set_number_of_abc_layers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.subregionparams">
+<span class="sig-name descname"><span class="pre">subregionparams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.subregionparams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.sumz">
+<span class="sig-name descname"><span class="pre">sumz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.sumz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.ugrid">
+<span class="sig-name descname"><span class="pre">ugrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.ugrid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.CartesianGrid.writetofile">
+<span class="sig-name descname"><span class="pre">writetofile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dosya</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.CartesianGrid.writetofile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.refinearray">
+<span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.grid3.</span></span><span class="sig-name descname"><span class="pre">refinearray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#em.fdfd_2d.grid3.refinearray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="em.fdfd_2d.grid3.subregion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">em.fdfd_2d.grid3.</span></span><span class="sig-name descname"><span class="pre">subregion</span></span><a class="headerlink" href="#em.fdfd_2d.grid3.subregion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-em.fdfd_2d">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-em.fdfd_2d" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">em.fdfd_2d package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-em.fdfd_2d.fdfd_2d">em.fdfd_2d.fdfd_2d module</a></li>
+<li><a class="reference internal" href="#module-em.fdfd_2d.grid3">em.fdfd_2d.grid3 module</a></li>
+<li><a class="reference internal" href="#module-em.fdfd_2d">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="em.html"
+                          title="previous chapter">em package</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="em.mode_matching.html"
+                          title="next chapter">em.mode_matching package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/em.fdfd_2d.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="em.mode_matching.html" title="em.mode_matching package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="em.html" title="em package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >src</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="em.html" >em package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">em.fdfd_2d package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Tuncay Erdöl.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
