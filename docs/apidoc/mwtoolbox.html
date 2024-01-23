@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>mwtoolbox package &#8212; mwtoolbox 0.1.0 documentation</title>
+    <title>mwtoolbox package &#8212; mwtoolbox 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="em.mode_matching.html" title="em.mode_matching package"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">src</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mwtoolbox package</a></li> 
       </ul>
@@ -52,8 +52,7 @@
 </section>
 <section id="module-mwtoolbox.components">
 <span id="mwtoolbox-components-module"></span><h2>mwtoolbox.components module<a class="headerlink" href="#module-mwtoolbox.components" title="Permalink to this heading">¶</a></h2>
-<p>Created on Tue Nov 17 11:52:33 2009</p>
-<p>&#64;author: Tuncay</p>
+<p>This module involves the calculations related to RF/Microwave components.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mwtoolbox.components.absorptive_filter_equalizer">
 <span class="sig-prename descclassname"><span class="pre">mwtoolbox.components.</span></span><span class="sig-name descname"><span class="pre">absorptive_filter_equalizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaultunits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.components.absorptive_filter_equalizer" title="Permalink to this definition">¶</a></dt>
@@ -1544,73 +1543,43 @@ Note: eeff is the same as eeff of microstrip with w=2*d, t=0</p>
 <section id="module-mwtoolbox.filters">
 <span id="mwtoolbox-filters-module"></span><h2>mwtoolbox.filters module<a class="headerlink" href="#module-mwtoolbox.filters" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.BPFilterFromPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">BPFilterFromPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FBW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.BPFilterFromPrototype" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.bp_filter_from_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">bp_filter_from_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FBW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.bp_filter_from_prototype" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.BSFilterFromPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">BSFilterFromPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FBW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.BSFilterFromPrototype" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.bs_filter_from_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">bs_filter_from_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FBW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.bs_filter_from_prototype" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.ButterworthFilterPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">ButterworthFilterPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.ButterworthFilterPrototype" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.butterworth_filter_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">butterworth_filter_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.butterworth_filter_prototype" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.ChebyshevFilterPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">ChebyshevFilterPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.ChebyshevFilterPrototype" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.chebyshev_filter_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">chebyshev_filter_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.chebyshev_filter_prototype" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.ChebyshevSteppedImpedanceLPFilter">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">ChebyshevSteppedImpedanceLPFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxreturnloss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.ChebyshevSteppedImpedanceLPFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.chebyshev_stepped_impedance_lp_filter">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">chebyshev_stepped_impedance_lp_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxreturnloss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.chebyshev_stepped_impedance_lp_filter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.EWG_ABCD">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">EWG_ABCD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frek</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.EWG_ABCD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.evanescent_wg_filter3">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">evanescent_wg_filter3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.evanescent_wg_filter3" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.EvanescentWGFilter_3">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">EvanescentWGFilter_3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.EvanescentWGFilter_3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.evanescent_wg_filter4">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">evanescent_wg_filter4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.evanescent_wg_filter4" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.EvanescentWGFilter_4">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">EvanescentWGFilter_4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Lj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.EvanescentWGFilter_4" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.HPFilterFromPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">HPFilterFromPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.HPFilterFromPrototype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.InductivePostWGFilter">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">InductivePostWGFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxreturnloss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.InductivePostWGFilter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.LPFilterFromPrototype">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">LPFilterFromPrototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.LPFilterFromPrototype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.MinimumButterworthFilterDegree">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">MinimumButterworthFilterDegree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fstop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.MinimumButterworthFilterDegree" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.MinimumChebyshevFilterDegree">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">MinimumChebyshevFilterDegree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Lar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Las</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fstop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.MinimumChebyshevFilterDegree" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="mwtoolbox.filters.Z_WG_TE10">
-<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">Z_WG_TE10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.Z_WG_TE10" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mwtoolbox.filters.ewg_abcd">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">ewg_abcd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frek</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.ewg_abcd" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1621,6 +1590,36 @@ Note: eeff is the same as eeff of microstrip with w=2*d, t=0</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mwtoolbox.filters.filter_with_j_inverter2">
 <span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">filter_with_j_inverter2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fcenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fbw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.filter_with_j_inverter2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.hp_filter_from_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">hp_filter_from_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.hp_filter_from_prototype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.inductive_post_wg_filter">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">inductive_post_wg_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxreturnloss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.inductive_post_wg_filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.lp_filter_from_prototype">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">lp_filter_from_prototype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Zo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.lp_filter_from_prototype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.minimum_butterworth_filter_degree">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">minimum_butterworth_filter_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fstop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.minimum_butterworth_filter_degree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.minimum_chebyshev_filter_degree">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">minimum_chebyshev_filter_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Lar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Las</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fstop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.minimum_chebyshev_filter_degree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mwtoolbox.filters.zwg_te10">
+<span class="sig-prename descclassname"><span class="pre">mwtoolbox.filters.</span></span><span class="sig-name descname"><span class="pre">zwg_te10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.filters.zwg_te10" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -2968,7 +2967,7 @@ Uses <em>data_array</em> method internally. A convenience function for practical
 <span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SP2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.rfnetwork.spfile.__add__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements SP1+SP2. Cascades port-1 of SP2 to port-2 of SP1. Port ordering is shown in the following diagram. Reference impedances of original ports (port-1 of SP1 and port-2 of SP2) are preserved.</p>
 <blockquote>
-<div><img alt="_images/ditaa-55e71bb85a00434282636cfc9666a477a28e477d.png" src="_images/ditaa-55e71bb85a00434282636cfc9666a477a28e477d.png" />
+<div><img alt="_images/ditaa-d31472099fd62e14b419bc6f92b968e2dc48445d.png" src="_images/ditaa-d31472099fd62e14b419bc6f92b968e2dc48445d.png" />
 </div></blockquote>
 <p>SP1 is <em>self</em>.</p>
 <dl class="field-list simple">
@@ -4498,6 +4497,7 @@ Port-2: Output port where load impedances are switched.</p>
 </section>
 <section id="module-mwtoolbox.transmission_lines">
 <span id="mwtoolbox-transmission-lines-module"></span><h2>mwtoolbox.transmission_lines module<a class="headerlink" href="#module-mwtoolbox.transmission_lines" title="Permalink to this heading">¶</a></h2>
+<p>This module involves analysis and synthesis of RF/Microwave transmission lines.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mwtoolbox.transmission_lines.C_R_interdigital_capacitor">
 <span class="sig-prename descclassname"><span class="pre">mwtoolbox.transmission_lines.</span></span><span class="sig-name descname"><span class="pre">C_R_interdigital_capacitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">er</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mwtoolbox.transmission_lines.C_R_interdigital_capacitor" title="Permalink to this definition">¶</a></dt>
@@ -6634,7 +6634,7 @@ Reference:  Transmssion Line Design Handbook, p. 125</p>
         <li class="right" >
           <a href="em.mode_matching.html" title="em.mode_matching package"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mwtoolbox 0.0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="modules.html" >src</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">mwtoolbox package</a></li> 
       </ul>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-06 Di 17:04 -->
+<!-- 2024-01-23 Di 13:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MWTOOLBOX Reference</title>
@@ -55,392 +55,398 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8357b01">INTRODUCTION</a>
+<li><a href="#org3a55f1e">1. INTRODUCTION</a>
 <ul>
-<li><a href="#org04f0f43">Purpose</a></li>
-<li><a href="#org5cefe0e">Document structure</a></li>
+<li><a href="#org5e35f57">1.1. Purpose</a></li>
+<li><a href="#orgd1739ff">1.2. Document structure</a></li>
 </ul>
 </li>
-<li><a href="#orgbc64371">USING THE LIBRARY</a>
+<li><a href="#org944018a">2. USING THE LIBRARY</a>
 <ul>
-<li><a href="#org680cf87">Installation</a></li>
-<li><a href="#org49e529d">Short Tutorial</a>
+<li><a href="#org5080d00">2.1. Installation</a></li>
+<li><a href="#org9700631">2.2. Short Tutorial</a>
 <ul>
-<li><a href="#org7e6ee85">Getting Started</a></li>
-<li><a href="#org7d7dae6">Changing Frequency Points</a></li>
-<li><a href="#org3b749ea">S-parameter Renormalization</a></li>
-<li><a href="#org4a2b95a">Reconfiguration of Ports</a></li>
-<li><a href="#org91a7468">Cascading and De-embedding of Two-port Networks</a></li>
-<li><a href="#orgbce26d9">Inplace Modification</a></li>
+<li><a href="#org898d780">2.2.1. Getting Started</a></li>
+<li><a href="#org86c0a8f">2.2.2. Changing Frequency Points</a></li>
+<li><a href="#orgdb98d82">2.2.3. S-parameter Renormalization</a></li>
+<li><a href="#org027c8f2">2.2.4. Reconfiguration of Ports</a></li>
+<li><a href="#orgb1e6f43">2.2.5. Cascading and De-embedding of Two-port Networks</a></li>
+<li><a href="#orgb15056e">2.2.6. Inplace Modification</a></li>
+<li><a href="#org41161be">2.2.7. TRL calibration</a></li>
 </ul>
 </li>
-<li><a href="#org6195a6f">Initialization of network objects</a></li>
-<li><a href="#org509aa02">Parameters</a></li>
+<li><a href="#org60b0369">2.3. Initialization of network objects</a></li>
+<li><a href="#org36b1ec3">2.4. Parameters</a></li>
 </ul>
 </li>
-<li><a href="#org887b65a">TECHNICAL NOTES</a>
+<li><a href="#orgf77d4ab">3. TECHNICAL NOTES</a>
 <ul>
-<li><a href="#org18e8687">Operations With Network Parameters</a>
+<li><a href="#orgfc133b8">3.1. Operations With Network Parameters</a>
 <ul>
-<li><a href="#org466efdc">S-Parameter Definitions</a></li>
-<li><a href="#org79dfa96">Multiport S-Parameter Renormalization</a></li>
-<li><a href="#org4a089ba">Transmit Matrix</a></li>
-<li><a href="#org90ce3f1">Matrix Conversions</a></li>
-<li><a href="#orga4af47d">Gain Definitions</a></li>
-<li><a href="#orgfb0feab">Input Impedance/Admittance</a></li>
-<li><a href="#org99b3f1e">Stability Factors</a></li>
-<li><a href="#orgd03a659">Simultaneous Conjugate Matching</a></li>
-<li><a href="#org6729620">Extract Load Reflection Coefficient</a></li>
-<li><a href="#orgbec789d">Matrix Definition Of Typical Networks</a></li>
-<li><a href="#orgd56eec3">Frequency-Dependent Special Elements</a></li>
-<li><a href="#orga096c8f">Connecting Nodes</a></li>
-<li><a href="#orgec1f9eb">Connecting S-Parameter Blocks Together</a></li>
-<li><a href="#org58135da">Connecting Two Ports of a Network</a></li>
-<li><a href="#org7e5da9c">Extracting multiport S-Parameters of chip</a></li>
+<li><a href="#orgccd958a">3.1.1. S-Parameter Definitions</a></li>
+<li><a href="#org4f38f31">3.1.2. Multiport S-Parameter Renormalization</a></li>
+<li><a href="#orge466e5a">3.1.3. Transmit Matrix</a></li>
+<li><a href="#org69d18e2">3.1.4. Matrix Conversions</a></li>
+<li><a href="#org916d46b">3.1.5. Gain Definitions</a></li>
+<li><a href="#orgcd65fc8">3.1.6. Input Impedance/Admittance</a></li>
+<li><a href="#org32ec154">3.1.7. Stability Factors</a></li>
+<li><a href="#org183ff95">3.1.8. Simultaneous Conjugate Matching</a></li>
+<li><a href="#orgb7cd63b">3.1.9. Extract Load Reflection Coefficient</a></li>
+<li><a href="#org05d2eee">3.1.10. Matrix Definition Of Typical Networks</a></li>
+<li><a href="#orgdca3fa9">3.1.11. Frequency-Dependent Special Elements</a></li>
+<li><a href="#orgb18e35d">3.1.12. Connecting Nodes</a></li>
+<li><a href="#org69429f4">3.1.13. Connecting S-Parameter Blocks Together</a></li>
+<li><a href="#org3b0d1a5">3.1.14. Connecting Two Ports of a Network</a></li>
+<li><a href="#org30356b7">3.1.15. Extracting multiport S-Parameters of chip</a></li>
 </ul>
 </li>
-<li><a href="#org8fd1c57">Passivity</a>
+<li><a href="#orgb6969ed">3.2. Passivity</a>
 <ul>
-<li><a href="#orgf923ae1">Passivity Test</a></li>
-<li><a href="#orgbd520cb">Passivity Enforcement</a></li>
-<li><a href="#orgec360d6">Block For Conversion Between 2 Single-Ended Ports and 2 Even-Odd Mode Ports</a></li>
-<li><a href="#org184c5af">Network Parameters Of Basic Elements</a></li>
-<li><a href="#org9f0cf2c">Derivation of Z-Matrix from S-Matrix</a></li>
+<li><a href="#org9da0d61">3.2.1. Passivity Test</a></li>
+<li><a href="#orgff1dfb5">3.2.2. Passivity Enforcement</a></li>
+<li><a href="#orgf3d6cba">3.2.3. Block For Conversion Between 2 Single-Ended Ports and 2 Even-Odd Mode Ports</a></li>
+<li><a href="#orgc501708">3.2.4. Network Parameters Of Basic Elements</a></li>
+<li><a href="#org92d2f6d">3.2.5. Derivation of Z-Matrix from S-Matrix</a></li>
 </ul>
 </li>
-<li><a href="#org30962c2">Transmission Lines</a>
+<li><a href="#org2562eb3">3.3. Transmission Lines</a>
 <ul>
-<li><a href="#orged661e0">Introduction</a></li>
-<li><a href="#org5c87693">Skin Depth</a></li>
-<li><a href="#org8abf1de">Incremental Inductance Rule</a></li>
+<li><a href="#org92fa15e">3.3.1. Introduction</a></li>
+<li><a href="#orgb957728">3.3.2. Skin Depth</a></li>
+<li><a href="#org3a4bc88">3.3.3. Incremental Inductance Rule</a></li>
 </ul>
 </li>
-<li><a href="#org3d7fd50">De-Embedding, Calibration And Characterization</a>
+<li><a href="#org20aa422">3.4. De-Embedding, Calibration And Characterization</a>
 <ul>
-<li><a href="#org4c70dd4">De-embedding Block For 2-Port S-Parameters</a></li>
-<li><a href="#org6864c6c">Transition Extraction From Symmetric Measurements</a></li>
-<li><a href="#org84d3c75">Untermination Method</a></li>
+<li><a href="#org1302f9e">3.4.1. De-embedding Block For 2-Port S-Parameters</a></li>
+<li><a href="#orga65866c">3.4.2. Transition Extraction From Symmetric Measurements</a></li>
+<li><a href="#org9978e4e">3.4.3. Untermination Method</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd1b79ce">REFERENCES</a></li>
+<li><a href="#orgc6ca301">4. REFERENCES</a></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org8357b01" class="outline-2">
-<h2 id="org8357b01">INTRODUCTION</h2>
-<div class="outline-text-2" id="text-org8357b01">
+<div id="outline-container-org3a55f1e" class="outline-2">
+<h2 id="org3a55f1e"><span class="section-number-2">1.</span> INTRODUCTION</h2>
+<div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org04f0f43" class="outline-3">
-<h3 id="org04f0f43">Purpose</h3>
-<div class="outline-text-3" id="text-org04f0f43">
+<div id="outline-container-org5e35f57" class="outline-3">
+<h3 id="org5e35f57"><span class="section-number-3">1.1.</span> Purpose</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-MWTOOLBOX is a library for processing RF/Microwave networks.
+MWTOOLBOX is a library for processing RF/Microwave networks.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org5cefe0e" class="outline-3">
-<h3 id="org5cefe0e">Document structure</h3>
-<div class="outline-text-3" id="text-org5cefe0e">
+<div id="outline-container-orgd1739ff" class="outline-3">
+<h3 id="orgd1739ff"><span class="section-number-3">1.2.</span> Document structure</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
-This document is meant to be both a user manual and a technical book. At first part, there is a tutorial of the library and at the rest of the document, there is technical reference for the functions used in the library.
+This document is meant to be both a user manual and a technical book. At first part, there is a tutorial of the library and at the rest of the document, there is technical reference for the functions used in the library.<br />
 </p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgbc64371" class="outline-2">
-<h2 id="orgbc64371">USING THE LIBRARY</h2>
-<div class="outline-text-2" id="text-orgbc64371">
+<div id="outline-container-org944018a" class="outline-2">
+<h2 id="org944018a"><span class="section-number-2">2.</span> USING THE LIBRARY</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org680cf87" class="outline-3">
-<h3 id="org680cf87">Installation</h3>
-<div class="outline-text-3" id="text-org680cf87">
+<div id="outline-container-org5080d00" class="outline-3">
+<h3 id="org5080d00"><span class="section-number-3">2.1.</span> Installation</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
-The library is stored in Electrical. It can be installed by running the following command in Anaconda command prompt:
+The library is stored in Electrical. It can be installed by running the following command in Anaconda command prompt:<br />
 </p>
-<pre class="example" id="org0da5956">
+<pre class="example" id="org063194e">
 pip install -U mwtoolbox
 </pre>
 </div>
 </div>
-
-<div id="outline-container-org49e529d" class="outline-3">
-<h3 id="org49e529d">Short Tutorial</h3>
-<div class="outline-text-3" id="text-org49e529d">
+<div id="outline-container-org9700631" class="outline-3">
+<h3 id="org9700631"><span class="section-number-3">2.2.</span> Short Tutorial</h3>
+<div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org7e6ee85" class="outline-4">
-<h4 id="org7e6ee85">Getting Started</h4>
-<div class="outline-text-4" id="text-org7e6ee85">
+<div id="outline-container-org898d780" class="outline-4">
+<h4 id="org898d780"><span class="section-number-4">2.2.1.</span> Getting Started</h4>
+<div class="outline-text-4" id="text-2-2-1">
 <p>
-The main module used for processing RF network data is <code>rfnetwork</code>. First step is importing the library by:
+The main module used for processing RF network data is <code>rfnetwork</code>. First step is importing the library by:<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #0000FF;">from</span> mwtoolbox <span style="color: #0000FF;">import</span> rfnetwork
+<pre class="src src-python"><span style="color: #20b2aa; font-weight: bold;">from</span> mwtoolbox <span style="color: #20b2aa; font-weight: bold;">import</span> rfnetwork
 </pre>
 </div>
 
 <p>
-SPFILE is the main class in <code>rfnetwork</code> module that is used to define and process multiport RF network data. Its main target is to enable calculations on RF network data in a python script and therefore enable automation of these kind of tasks.
+SPFILE is the main class in <code>rfnetwork</code> module that is used to define and process multiport RF network data. Its main target is to enable calculations on RF network data in a python script and therefore enable automation of these kind of tasks.<br />
 </p>
 
 <p>
-The most usual way to create an RF network object is reading an s-parameter file.
+The most usual way to create an RF network object is reading an s-parameter file.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">snet</span> = rfnetwork.spfile(<span style="color: #008000;">"amplifier.s2p"</span>)
+<pre class="src src-python"><span style="color: #9acd32;">snet</span> = rfnetwork.spfile(<span style="color: #ffa07a;">"amplifier.s2p"</span>)
 </pre>
 </div>
 
 <p>
-Some parameters of the network can be accessed in following ways:
+Some parameters of the network can be accessed in following ways:<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python">snet.freqs <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">frequency points of the network in Hz</span>
-snet.S(i,j) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">S(i,j)</span>
-snet.Y(i,j) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Y(i,j)</span>
-snet.Z(i,j) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Z(i,j)</span>
-snet.T(i,j) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">T(i,j)</span>
-snet.ABCD(i,j) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">ABCD(i,j)</span>
+<pre class="src src-python">snet.freqs <span style="color: #cd853f;"># </span><span style="color: #cd853f;">frequency points of the network in Hz</span>
+snet.S(i,j) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">S(i,j)</span>
+snet.Y(i,j) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">Y(i,j)</span>
+snet.Z(i,j) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">Z(i,j)</span>
+snet.T(i,j) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">T(i,j)</span>
+snet.ABCD(i,j) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">ABCD(i,j)</span>
 </pre>
 </div>
 <p>
-All these functions return a numpy array and take two optional parameters, <code>data_format</code> and <code>freqs</code>.
+All these functions return a numpy array and take two optional parameters, <code>data_format</code> and <code>freqs</code>.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python">snet.S(i,j,data_format=<span style="color: #008000;">"complex"</span>,freqs=<span style="color: #D0372D;">None</span>)
+<pre class="src src-python">snet.S(i,j,data_format=<span style="color: #ffa07a;">"complex"</span>,freqs=<span style="color: #1e90ff;">None</span>)
 </pre>
 </div>
 <p>
-<code>data_format</code> is the format of the returned data. By default, complex data is returned. Other supported formats are (case insensitive):
+<code>data_format</code> is the format of the returned data. By default, complex data is returned. Other supported formats are (case insensitive):<br />
 </p>
 <ul class="org-ul">
-<li><code>K</code>: Stability factor of 2-port</li>
-<li><code>MU1</code>: Input stability factor of 2-port</li>
-<li><code>MU2</code>: Output stability factor of 2-port</li>
-<li><code>VSWR</code>: VSWR at port i</li>
-<li><code>MAG</code>: Magnitude</li>
-<li><code>DB</code>: Magnitude in dB (20log)</li>
-<li><code>REAL</code>: Real part</li>
-<li><code>IMAG</code>: Imaginary part</li>
-<li><code>PHASE</code>: Phase of in degrees between 0-360</li>
-<li><code>UPHASE</code>: Unwrapped phase in degrees</li>
-<li><code>GDELAY</code>: Group delay in seconds</li>
+<li><code>K</code>: Stability factor of 2-port<br /></li>
+<li><code>MU1</code>: Input stability factor of 2-port<br /></li>
+<li><code>MU2</code>: Output stability factor of 2-port<br /></li>
+<li><code>VSWR</code>: VSWR at port i<br /></li>
+<li><code>MAG</code>: Magnitude<br /></li>
+<li><code>DB</code>: Magnitude in dB (20log)<br /></li>
+<li><code>REAL</code>: Real part<br /></li>
+<li><code>IMAG</code>: Imaginary part<br /></li>
+<li><code>PHASE</code>: Phase of in degrees between 0-360<br /></li>
+<li><code>UPHASE</code>: Unwrapped phase in degrees<br /></li>
+<li><code>GDELAY</code>: Group delay in seconds<br /></li>
 </ul>
 <p>
-<code>freqs</code> is the frequency points of the returned data. By default, it is the current frequency points of the network.
+<code>freqs</code> is the frequency points of the returned data. By default, it is the current frequency points of the network.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org7d7dae6" class="outline-4">
-<h4 id="org7d7dae6">Changing Frequency Points</h4>
-<div class="outline-text-4" id="text-org7d7dae6">
+<div id="outline-container-org86c0a8f" class="outline-4">
+<h4 id="org86c0a8f"><span class="section-number-4">2.2.2.</span> Changing Frequency Points</h4>
+<div class="outline-text-4" id="text-2-2-2">
 <p>
-Frequency points of the network can be changed by interpolation using the command:
+Frequency points of the network can be changed by interpolation using the command:<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-python">snet.set_frequency_points(newfreqs)
 </pre>
 </div>
 <p>
-where <code>newfreqs</code> is the new frequency points as a list or numpy array.
-Or frequencies from the beginning or end of the frequency list can be cropped with:
+where <code>newfreqs</code> is the new frequency points as a list or numpy array.<br />
+Or frequencies from the beginning or end of the frequency list can be cropped with:<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-python">snet.crop_with_frequency(fstart=fs1, fstop=fs2)
 </pre>
 </div>
 <p>
-<code>fstart</code> is optional. If given, frequencies below fs1 are cropped out. <code>fstop</code> is also optional and if given, frequencies above fs2 are cropped out.
+<code>fstart</code> is optional. If given, frequencies below fs1 are cropped out. <code>fstop</code> is also optional and if given, frequencies above fs2 are cropped out.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org3b749ea" class="outline-4">
-<h4 id="org3b749ea">S-parameter Renormalization</h4>
-<div class="outline-text-4" id="text-org3b749ea">
+<div id="outline-container-orgdb98d82" class="outline-4">
+<h4 id="orgdb98d82"><span class="section-number-4">2.2.3.</span> S-parameter Renormalization</h4>
+<div class="outline-text-4" id="text-2-2-3">
 <p>
-S-parameter renormalization with different reference impedance can be done with the following command:
+S-parameter renormalization with different reference impedance can be done with the following command:<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-python">snet.change_ref_impedance(impedances)
 </pre>
 </div>
 <p>
-If <code>impedances</code> parameter is a
+If <code>impedances</code> parameter is a<br />
 </p>
 <ul class="org-ul">
-<li>number, it will be the new reference impedance for all ports and frequencies.</li>
-<li>list or numpy array, its size should be equal to number of ports and each element is assumed to be reference impedance for each port. If this reference impedance is a:
+<li>number, it will be the new reference impedance for all ports and frequencies.<br /></li>
+<li>list or numpy array, its size should be equal to number of ports and each element is assumed to be reference impedance for each port. If this reference impedance is a:<br />
 <ul class="org-ul">
-<li>number, it is used for all frequencies and reference impedance is frequency independent.</li>
-<li>list or numpy array, its size should be the same as the number of frequency points. Each element of the list is used for corresponding frequency.</li>
+<li>number, it is used for all frequencies and reference impedance is frequency independent.<br /></li>
+<li>list or numpy array, its size should be the same as the number of frequency points. Each element of the list is used for corresponding frequency.<br /></li>
 </ul></li>
 </ul>
 
 <p>
-For complex reference impedances, different S-Parameter definitions are possible. Three of them are supported in the library (<a href="#org466efdc">S-Parameter Definitions</a>). By default, power-waves are used.
+For complex reference impedances, different S-Parameter definitions are possible. Three of them are supported in the library (<a href="#orgccd958a">3.1.1</a>). By default, power-waves are used.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org4a2b95a" class="outline-4">
-<h4 id="org4a2b95a">Reconfiguration of Ports</h4>
-<div class="outline-text-4" id="text-org4a2b95a">
+<div id="outline-container-org027c8f2" class="outline-4">
+<h4 id="org027c8f2"><span class="section-number-4">2.2.4.</span> Reconfiguration of Ports</h4>
+<div class="outline-text-4" id="text-2-2-4">
 <p>
-Reconfiguration of ports can be done through <code>snp2smp</code> method. With this method, ports can be swapped or some ports can be removed from the network.
+Reconfiguration of ports can be done through <code>snp2smp</code> method. With this method, ports can be swapped or some ports can be removed from the network.<br />
 </p>
 <div class="org-src-container">
 <pre class="src src-python">snet.snp2smp(newports)
 </pre>
 </div>
 <p>
-where <code>newports</code> is the new ports list. This means port <code>j</code> of new network is <code>newports[j]</code> port of the original network. Unused ports of the original network are terminated with current reference impedances of those ports.
+where <code>newports</code> is the new ports list. This means port <code>j</code> of new network is <code>newports[j]</code> port of the original network. Unused ports of the original network are terminated with current reference impedances of those ports.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org91a7468" class="outline-4">
-<h4 id="org91a7468">Cascading and De-embedding of Two-port Networks</h4>
-<div class="outline-text-4" id="text-org91a7468">
+<div id="outline-container-orgb1e6f43" class="outline-4">
+<h4 id="orgb1e6f43"><span class="section-number-4">2.2.5.</span> Cascading and De-embedding of Two-port Networks</h4>
+<div class="outline-text-4" id="text-2-2-5">
 <p>
-Two-port <code>SPFILE</code> network objects can be cascaded simply using "+" operator. At the following example, port-1 of <code>snet2</code> is connected to port-1 of <code>snet1</code> and <code>snet</code> becomes the new two-port network between port-1 of <code>snet1</code> and port-2 of <code>snet2</code>. <code>snet1</code> and <code>snet2</code> are not modified.
+Two-port <code>SPFILE</code> network objects can be cascaded simply using "+" operator. At the following example, port-1 of <code>snet2</code> is connected to port-1 of <code>snet1</code> and <code>snet</code> becomes the new two-port network between port-1 of <code>snet1</code> and port-2 of <code>snet2</code>. <code>snet1</code> and <code>snet2</code> are not modified.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">snet</span> = snet1+snet2
+<pre class="src src-python"><span style="color: #9acd32;">snet</span> = snet1+snet2
 </pre>
 </div>
 
 <p>
-Similarly, de-embedding of two-port <code>SPFILE</code> network objects can be done using "-" operator. Following the previous example, we can obtain <code>snet1</code> again by de-embedding <code>snet2</code> from snet, or obtain <code>snet2</code> again by de-embedding <code>snet1</code> from <code>snet</code>.
+Similarly, de-embedding of two-port <code>SPFILE</code> network objects can be done using "-" operator. Following the previous example, we can obtain <code>snet1</code> again by de-embedding <code>snet2</code> from snet, or obtain <code>snet2</code> again by de-embedding <code>snet1</code> from <code>snet</code>.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">snet1</span> = snet-snet2
+<pre class="src src-python"><span style="color: #9acd32;">snet1</span> = snet-snet2
 </pre>
 </div>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">snet2</span> = -snet1+snet
+<pre class="src src-python"><span style="color: #9acd32;">snet2</span> = -snet1+snet
 </pre>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgbce26d9" class="outline-4">
-<h4 id="orgbce26d9">Inplace Modification</h4>
-<div class="outline-text-4" id="text-orgbce26d9">
+<div id="outline-container-orgb15056e" class="outline-4">
+<h4 id="orgb15056e"><span class="section-number-4">2.2.6.</span> Inplace Modification</h4>
+<div class="outline-text-4" id="text-2-2-6">
 <p>
-All functions which modify the <code>SPFILE</code> object, returns the modified object and takes <code>inplace</code> parameter as the last argument. If this parameter is;
+All functions which modify the <code>SPFILE</code> object, returns the modified object and takes <code>inplace</code> parameter as the last argument. If this parameter is;<br />
 </p>
 <ul class="org-ul">
-<li>0, the object which calls this method is NOT modified but the modified object is returned from the method.</li>
-<li>-1 (default value), the <code>inplace</code> attribute of the calling object is used. Default value for new objects is 1.</li>
-<li>any other value, the object calling this method is modified.</li>
+<li>0, the object which calls this method is NOT modified but the modified object is returned from the method.<br /></li>
+<li>-1 (default value), the <code>inplace</code> attribute of the calling object is used. Default value for new objects is 1.<br /></li>
+<li>any other value, the object calling this method is modified.<br /></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">snet_new</span> = snet.snp2smp([2,1], inplace=0) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">snet is not modified. snet_new is the new object with new port configuration.</span>
-snet.snp2smp([2,1], inplace=1) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">snet is modified and returned.</span>
+<pre class="src src-python"><span style="color: #9acd32;">snet_new</span> = snet.snp2smp([2,1], inplace=0) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">snet is not modified. snet_new is the new object with new port configuration.</span>
+snet.snp2smp([2,1], inplace=1) <span style="color: #cd853f;"># </span><span style="color: #cd853f;">snet is modified and returned.</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org41161be" class="outline-4">
+<h4 id="org41161be"><span class="section-number-4">2.2.7.</span> TRL calibration</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<p>
+TRL extraction can be done using the function <code>=trl_launcher_extraction=</code> function in <code>rfnetwork</code> module. Inputs are the data for <code>thru</code>, <code>line</code> and <code>reflect</code> measurements. These data can be in the form of s-parameter file name or <code>SPFILE</code> object. 4th parameter is the type of reflect standard ("short" or "open").<br />
+</p>
+
+<p>
+Return value is a 3-tuple. First 2 items are <code>SPFILE</code> objects of input and output launchers (1st port for both output is the external port). 3rd item is \(\gamma L\) for the interconnecting line of the <code>line</code> standard. Frequency points for all outputs are the same.<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #9acd32;">sp1</span>,<span style="color: #9acd32;">sp2</span>,<span style="color: #9acd32;">gL</span>= rfnetwork.trl_launcher_extraction(thru, line, ref, refstd=<span style="color: #ffa07a;">"short"</span>)
 </pre>
 </div>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org6195a6f" class="outline-3">
-<h3 id="org6195a6f">Initialization of network objects</h3>
-<div class="outline-text-3" id="text-org6195a6f">
+<div id="outline-container-org60b0369" class="outline-3">
+<h3 id="org60b0369"><span class="section-number-3">2.3.</span> Initialization of network objects</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
-Every network is associated to and represented by an SPFILE object. <code>SPFILE</code> objects can be created in a number of ways:
+Every network is associated to and represented by an SPFILE object. <code>SPFILE</code> objects can be created in a number of ways:<br />
 </p>
 <ol class="org-ol">
 <li><p>
-An <code>SPFILE</code> object can created by reading a Touchstone file. Extra parameters that does not exist in file (<code>port_names</code> etc.) can be defined later by methods of the class.
+An <code>SPFILE</code> object can created by reading a Touchstone file. Extra parameters that does not exist in file (<code>port_names</code> etc.) can be defined later by methods of the class.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">twoport</span> = spfile(<span style="color: #008000;">"measurement.s2p"</span>)
+<pre class="src src-python"><span style="color: #9acd32;">twoport</span> = spfile(<span style="color: #ffa07a;">"measurement.s2p"</span>)
 </pre>
 </div></li>
 <li><p>
-An empty <code>SPFILE</code> object can be created to be populated later.
+An empty <code>SPFILE</code> object can be created to be populated later.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">twoport</span> = spfile(n_ports = 2)
+<pre class="src src-python"><span style="color: #9acd32;">twoport</span> = spfile(n_ports = 2)
 </pre>
 </div></li>
 <li><p>
-Special <code>SPFILE</code> objects can be created using factory methods.
+Special <code>SPFILE</code> objects can be created using factory methods.<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #BA36A5;">twoport</span> = spfile.stripline(length, w, eps_r, h1, h2, t)
+<pre class="src src-python"><span style="color: #9acd32;">twoport</span> = spfile.stripline(length, w, eps_r, h1, h2, t)
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
-
-<div id="outline-container-org509aa02" class="outline-3">
-<h3 id="org509aa02">Parameters</h3>
-<div class="outline-text-3" id="text-org509aa02">
+<div id="outline-container-org36b1ec3" class="outline-3">
+<h3 id="org36b1ec3"><span class="section-number-3">2.4.</span> Parameters</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
-In this section all parameters of SPFILE class is given. These parameters are not meant to be used by user directly. This information is merely intended to give an idea about what information a SPFILE object includes and to be used by people who want to extend the functionality of the class.
+In this section all parameters of SPFILE class is given. These parameters are not meant to be used by user directly. This information is merely intended to give an idea about what information a SPFILE object includes and to be used by people who want to extend the functionality of the class.<br />
 </p>
 
 <ol class="org-ol">
-<li><code>frequency_points</code> or <code>freqs</code>: This is the list of frequencies at which network data is defined</li>
-<li><code>sdata</code>: S-Parameter data of the network defined for every frequency point in FrequencyPoints.</li>
-<li><code>ydata</code>: Admittance Matrix data of the network. Calculated only when needed from S-Parameters.</li>
-<li><code>zdata</code>: Impedance Matrix data of the network. Calculated only when needed from S-Parameters.</li>
-<li><code>abcddata</code>: ABCD Matrix between 2 of the ports of the network. Other ports are terminated.</li>
-<li><code>formulation</code>: 3 different types of S-Parameter definitions are supported in library. This variable shows the definition currently used.</li>
-<li><code>filename</code>: If <code>sdata</code> is read from a Touchstone file, this variable holds the name of the file.</li>
-<li><code>refimpedance</code>: A list of reference impedances of all the ports of the network in order. For each port, impedance can be either of these:
-a. A complex number which is valid for all frequencies
-b. A list of complex numbers including the reference impedance values for each frequency. The length of this list should be the same a the number of frequencies
-c. A function which takes only the frequency as argument and outputs a complex number
-d. An <code>SPFILE</code> object. \(S_{11}\) of this object is used.</li>
-<li><code>sym_matrix</code>: S-Parameter can be defined using symbolic expressions instead of numeric value. This variable holds the symbolic S-Parameter expression. Numeric values of S-Parameters are calculated using this matrix and numeric values of parameters used in the matrix. It is set to None if not used.</li>
-<li><code>sparam_gen_func</code>: S-Parameters can be created using a function which takes only a frequency as argument and outputs a complex. This variable holds this function. It is set to <code>None</code> if not used.</li>
-<li><code>sym_parameters</code>: A dictionary holding the numeric values of parameters (except frequency) used in symbolic S-Parameter <code>sym_matrix</code>.</li>
-<li><code>port_names</code>: A list holding the names of the ports in order. Names can be set explicitly or read from Touchstone files exported from HFSS.</li>
-<li><code>inplace</code>: Almost all functions of the library returns the object it operates on. But it can be set whether a function modify the object itself and return it, or does not modify the object but returns a new object. This behaviour can be set for every function used by passing an argument. In case of no argument passed to the function, the default behaviour is set by this variable. If this is 1, object itself is modified and returned. If it is 0, object is not modified and a new object is returned by function.</li>
-<li><code>comments</code>: This variable holds the comments read from the Touchstone file.</li>
+<li><code>frequency_points</code> or <code>freqs</code>: This is the list of frequencies at which network data is defined<br /></li>
+<li><code>sdata</code>: S-Parameter data of the network defined for every frequency point in FrequencyPoints.<br /></li>
+<li><code>ydata</code>: Admittance Matrix data of the network. Calculated only when needed from S-Parameters.<br /></li>
+<li><code>zdata</code>: Impedance Matrix data of the network. Calculated only when needed from S-Parameters.<br /></li>
+<li><code>abcddata</code>: ABCD Matrix between 2 of the ports of the network. Other ports are terminated.<br /></li>
+<li><code>formulation</code>: 3 different types of S-Parameter definitions are supported in library. This variable shows the definition currently used.<br /></li>
+<li><code>filename</code>: If <code>sdata</code> is read from a Touchstone file, this variable holds the name of the file.<br /></li>
+<li><code>refimpedance</code>: A list of reference impedances of all the ports of the network in order. For each port, impedance can be either of these:<br />
+a. A complex number which is valid for all frequencies<br />
+b. A list of complex numbers including the reference impedance values for each frequency. The length of this list should be the same a the number of frequencies<br />
+c. A function which takes only the frequency as argument and outputs a complex number<br />
+d. An <code>SPFILE</code> object. \(S_{11}\) of this object is used.<br /></li>
+<li><code>sym_matrix</code>: S-Parameter can be defined using symbolic expressions instead of numeric value. This variable holds the symbolic S-Parameter expression. Numeric values of S-Parameters are calculated using this matrix and numeric values of parameters used in the matrix. It is set to None if not used.<br /></li>
+<li><code>sparam_gen_func</code>: S-Parameters can be created using a function which takes only a frequency as argument and outputs a complex. This variable holds this function. It is set to <code>None</code> if not used.<br /></li>
+<li><code>sym_parameters</code>: A dictionary holding the numeric values of parameters (except frequency) used in symbolic S-Parameter <code>sym_matrix</code>.<br /></li>
+<li><code>port_names</code>: A list holding the names of the ports in order. Names can be set explicitly or read from Touchstone files exported from HFSS.<br /></li>
+<li><code>inplace</code>: Almost all functions of the library returns the object it operates on. But it can be set whether a function modify the object itself and return it, or does not modify the object but returns a new object. This behaviour can be set for every function used by passing an argument. In case of no argument passed to the function, the default behaviour is set by this variable. If this is 1, object itself is modified and returned. If it is 0, object is not modified and a new object is returned by function.<br /></li>
+<li><code>comments</code>: This variable holds the comments read from the Touchstone file.<br /></li>
 </ol>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org887b65a" class="outline-2">
-<h2 id="org887b65a">TECHNICAL NOTES</h2>
-<div class="outline-text-2" id="text-org887b65a">
+<div id="outline-container-orgf77d4ab" class="outline-2">
+<h2 id="orgf77d4ab"><span class="section-number-2">3.</span> TECHNICAL NOTES</h2>
+<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org18e8687" class="outline-3">
-<h3 id="org18e8687">Operations With Network Parameters</h3>
-<div class="outline-text-3" id="text-org18e8687">
+<div id="outline-container-orgfc133b8" class="outline-3">
+<h3 id="orgfc133b8"><span class="section-number-3">3.1.</span> Operations With Network Parameters</h3>
+<div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org466efdc" class="outline-4">
-<h4 id="org466efdc">S-Parameter Definitions</h4>
-<div class="outline-text-4" id="text-org466efdc">
+<div id="outline-container-orgccd958a" class="outline-4">
+<h4 id="orgccd958a"><span class="section-number-4">3.1.1.</span> S-Parameter Definitions</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <p>
-In literature there are different types of definitions for \(a\) and \(b\) signals of S-Parameter definition. In this library 3-types are supported; Power Waves, Pseudo-Waves and HFSS Pseudo-Waves. Power Waves is the default definition used. The definition used is set by <code>formulation</code> parameter:
+In literature there are different types of definitions for \(a\) and \(b\) signals of S-Parameter definition. In this library 3-types are supported; Power Waves, Pseudo-Waves and HFSS Pseudo-Waves. Power Waves is the default definition used. The definition used is set by <code>formulation</code> parameter:<br />
 </p>
 
 <p>
-S-Parameter Formulations:
+S-Parameter Formulations:<br />
 </p>
 <ol class="org-ol">
-<li>Power-Waves</li>
-<li>Pseudo-Waves</li>
-<li>HFSS Pseudo-Waves</li>
+<li>Power-Waves<br /></li>
+<li>Pseudo-Waves<br /></li>
+<li>HFSS Pseudo-Waves<br /></li>
 </ol>
 </div>
-
-<ul class="org-ul">
-<li><a id="org0070a23"></a>Power-Waves<br />
-<div class="outline-text-5" id="text-org0070a23">
+<ol class="org-ol">
+<li><a id="orgef28baa"></a>Power-Waves<br />
+<div class="outline-text-5" id="text-3-1-1-1">
 <p>
-Power-Waves used for Power S-Parameter Calculation
+Power-Waves used for Power S-Parameter Calculation<br />
 </p>
 \begin{align}
   a = \frac{V + {IZ}_r}{2 \sqrt{{Re} \{ Z_r \}}} \qquad b = \frac{V - {IZ}_r^{\ast}}{2 \sqrt{{Re} \{ Z_r \}}} \\
@@ -448,11 +454,10 @@ Power-Waves used for Power S-Parameter Calculation
 \end{align}
 </div>
 </li>
-
-<li><a id="orgcf4bb76"></a>Pseudo-Waves<br />
-<div class="outline-text-5" id="text-orgcf4bb76">
+<li><a id="orga157a07"></a>Pseudo-Waves<br />
+<div class="outline-text-5" id="text-3-1-1-2">
 <p>
-There are different definitions for Pseduo-Waves in the literature. Pseudo-Waves definition from (<a href="#citeproc_bib_item_2">Edwards and Steer 2016</a>)
+There are different definitions for Pseduo-Waves in the literature. Pseudo-Waves definition from (<a href="#citeproc_bib_item_2">Edwards and Steer 2016</a>)<br />
 </p>
 
 \begin{align}
@@ -461,11 +466,10 @@ There are different definitions for Pseduo-Waves in the literature. Pseudo-Waves
 \end{align}
 </div>
 </li>
-
-<li><a id="org4c9acb5"></a>HFSS Pseudo-Waves<br />
-<div class="outline-text-5" id="text-org4c9acb5">
+<li><a id="org6a5fc3b"></a>HFSS Pseudo-Waves<br />
+<div class="outline-text-5" id="text-3-1-1-3">
 <p>
-HFSS Pseudo-Waves used for Generalized S-Parameter Calculation
+HFSS Pseudo-Waves used for Generalized S-Parameter Calculation<br />
 </p>
 \begin{align}
 a &= \frac{V + {IZ}_r}{2 \sqrt{Z_r}} \\
@@ -474,22 +478,21 @@ V &= (a + b) \sqrt{Z_r} \\
 I &= \frac{a - b}{\sqrt{Z_r}}
 \end{align}
 <p>
-HFSS defines Generalized S-Parameters as the S-Parameters related to HFSS pseudo-waves. But generally in the literature, regardless of the wave definition, generalized S-Parameters are defined as S-Parameters with different reference impedance at each port.
+HFSS defines Generalized S-Parameters as the S-Parameters related to HFSS pseudo-waves. But generally in the literature, regardless of the wave definition, generalized S-Parameters are defined as S-Parameters with different reference impedance at each port.<br />
 </p>
 </div>
 </li>
-</ul>
+</ol>
 </div>
-
-<div id="outline-container-org79dfa96" class="outline-4">
-<h4 id="org79dfa96">Multiport S-Parameter Renormalization</h4>
-<div class="outline-text-4" id="text-org79dfa96">
+<div id="outline-container-org4f38f31" class="outline-4">
+<h4 id="org4f38f31"><span class="section-number-4">3.1.2.</span> Multiport S-Parameter Renormalization</h4>
+<div class="outline-text-4" id="text-3-1-2">
 <p>
-The following equations are used to renormalize S-Parameters to a different set of reference impedances (<a href="#citeproc_bib_item_6">Reveyrand 2018</a>) .
+The following equations are used to renormalize S-Parameters to a different set of reference impedances (<a href="#citeproc_bib_item_6">Reveyrand 2018</a>) .<br />
 </p>
 
 <p>
-Let:
+Let:<br />
 </p>
 \begin{align}
 a &= F (V + Z_r I) \label{eqab} \\
@@ -499,16 +502,16 @@ b &= F (V - Z_r^{ \ast} I) \label{eqab1}
   Z_r = {diag} \{ Z_1, \ldots . \}
 \end{equation}
 <p>
-where
+where<br />
 </p>
 <ul class="org-ul">
-<li>\(Z_1\), \(Z_2\) are the reference impedances for each port.</li>
-<li>\(diag{}\) a matrix of which only diagonal elements are non-zero and given by the list in brackets.</li>
-<li>\(F\) depends on the S-Parameter formulation used and given as in the related section.</li>
-<li>\(A^{*}\) The complex conjugate of matrix A.</li>
+<li>\(Z_1\), \(Z_2\) are the reference impedances for each port.<br /></li>
+<li>\(diag{}\) a matrix of which only diagonal elements are non-zero and given by the list in brackets.<br /></li>
+<li>\(F\) depends on the S-Parameter formulation used and given as in the related section.<br /></li>
+<li>\(A^{*}\) The complex conjugate of matrix A.<br /></li>
 </ul>
 <p>
-Then the renormalization formulae are;
+Then the renormalization formulae are;<br />
 </p>
 
 \begin{align}
@@ -518,12 +521,11 @@ Then the renormalization formulae are;
 \end{align}
 </div>
 </div>
-
-<div id="outline-container-org4a089ba" class="outline-4">
-<h4 id="org4a089ba">Transmit Matrix</h4>
-<div class="outline-text-4" id="text-org4a089ba">
+<div id="outline-container-orge466e5a" class="outline-4">
+<h4 id="orge466e5a"><span class="section-number-4">3.1.3.</span> Transmit Matrix</h4>
+<div class="outline-text-4" id="text-3-1-3">
 <p>
-T-Matrix definition used in the library is:
+T-Matrix definition used in the library is:<br />
 </p>
 \begin{equation}
   \left[\begin{array}{c} b_1\\ a_1 \end{array}\right] = \left[\begin{array}{cc} T_{11} & T_{12}\\ T_{21} & T_{22} \end{array}\right] \left[\begin{array}{c}  a_2\\ b_2 \end{array}\right]
@@ -542,23 +544,22 @@ T-Matrix definition used in the library is:
 \end{equation}
 
 <p>
-For a reciprocal network;
+For a reciprocal network;<br />
 </p>
 \begin{equation}
   T_{11} T_{22} - T_{12} T_{21} = 1
 \end{equation}
 </div>
 </div>
-
-<div id="outline-container-org90ce3f1" class="outline-4">
-<h4 id="org90ce3f1">Matrix Conversions</h4>
-<div class="outline-text-4" id="text-org90ce3f1">
+<div id="outline-container-org69d18e2" class="outline-4">
+<h4 id="org69d18e2"><span class="section-number-4">3.1.4.</span> Matrix Conversions</h4>
+<div class="outline-text-4" id="text-3-1-4">
 </div>
-<ul class="org-ul">
-<li><a id="org4db0657"></a>S - Z Conversion<br />
-<div class="outline-text-5" id="text-org4db0657">
+<ol class="org-ol">
+<li><a id="orgfe73fd6"></a>S - Z Conversion<br />
+<div class="outline-text-5" id="text-3-1-4-1">
 <p>
-Using the notation from <a href="#org79dfa96">Multiport S-Parameter Renormalization</a> (equation \ref{eqab}), conversions between S and Z matrices are done as;
+Using the notation from <a href="#org4f38f31">Multiport S-Parameter Renormalization</a> (equation \ref{eqab}), conversions between S and Z matrices are done as;<br />
 </p>
 \begin{align}
   Z &= F^{- 1} (I - S)^{- 1} ({SZ}_r + Z_r^{\ast}) F \\
@@ -566,24 +567,22 @@ Using the notation from <a href="#org79dfa96">Multiport S-Parameter Renormalizat
 \end{align}
 </div>
 </li>
-
-<li><a id="org616e046"></a>S - Y Conversion<br />
-<div class="outline-text-5" id="text-org616e046">
+<li><a id="org15e09f4"></a>S - Y Conversion<br />
+<div class="outline-text-5" id="text-3-1-4-2">
 \begin{align}
   Y &= F^{- 1} (Z_r^* + S Z_r)^{- 1} (I_0 - S) F \\
   S &= F (I_0-Z_r^*Y) (Z_rY+I_0)^{- 1} F^{- 1}
 \end{align}
 </div>
 </li>
-
-<li><a id="org15b7bd8"></a>S - T Conversion<br />
-<div class="outline-text-5" id="text-org15b7bd8">
+<li><a id="orgf413f31"></a>S - T Conversion<br />
+<div class="outline-text-5" id="text-3-1-4-3">
 <p>
-This method can also be used for any even number of port numbers. \(S_{x x}\) can be assumed to be submatrix of complete S-Matrix.
+This method can also be used for any even number of port numbers. \(S_{x x}\) can be assumed to be submatrix of complete S-Matrix.<br />
 </p>
 
 <p>
-\(T\) calculation from \(S\):
+\(T\) calculation from \(S\):<br />
 </p>
 
 \begin{equation}
@@ -597,7 +596,7 @@ This method can also be used for any even number of port numbers. \(S_{x x}\) ca
 \end{equation}
 
 <p>
-Calculation of \(S\) from \(T\):
+Calculation of \(S\) from \(T\):<br />
 </p>
 
 \begin{equation}
@@ -620,7 +619,7 @@ Calculation of \(S\) from \(T\):
   \end{array}\right] \left[\begin{array}{c} a_1\\ a_2 \end{array}\right]
 \end{equation}
 <p>
-Multiport Conversion (different T definition than mycode)(<a href="#citeproc_bib_item_6">Reveyrand 2018</a>):
+Multiport Conversion (different T definition than mycode)(<a href="#citeproc_bib_item_6">Reveyrand 2018</a>):<br />
 </p>
 \begin{align} S = \left[ \begin{array}{cc}
      S_{{ee}} & S_{{ei}}\\
@@ -648,18 +647,17 @@ Multiport Conversion (different T definition than mycode)(<a href="#citeproc_bib
    \end{array} \right] \end{align}
 </div>
 </li>
-</ul>
+</ol>
 </div>
-
-<div id="outline-container-orga4af47d" class="outline-4">
-<h4 id="orga4af47d">Gain Definitions</h4>
-<div class="outline-text-4" id="text-orga4af47d">
+<div id="outline-container-org916d46b" class="outline-4">
+<h4 id="org916d46b"><span class="section-number-4">3.1.5.</span> Gain Definitions</h4>
+<div class="outline-text-4" id="text-3-1-5">
 <p>
-Different definitions of gain for a 2-Port network (<a href="#citeproc_bib_item_5">Pozar 2005</a>).
+Different definitions of gain for a 2-Port network (<a href="#citeproc_bib_item_5">Pozar 2005</a>).<br />
 </p>
 
 <p>
-Transducer gain;
+Transducer gain;<br />
 </p>
 \begin{align}
   G_T &= \frac{\text{Power transferred to load}}{\text{Power available from source}} = \frac{P_L}{P_{avs}}\\
@@ -668,21 +666,21 @@ Transducer gain;
   G_T &= \frac{(1 - | \Gamma_G |^2) | S_{21} |^2 (1 - | \Gamma_L |^2)}{| (1 -  S_{11} \Gamma_G) (1 - S_{22} \Gamma_L) - S_{12} S_{21} \Gamma_G \Gamma_L |^2}
 \end{align}
 <p>
-Available power gain;
+Available power gain;<br />
 </p>
 \begin{align}
   G_a &= \frac{\text{Power available to load}}{\text{Power available from source}} =  \frac{P_{avl}}{P_{avs}}\\
   G_a &= \frac{1 - | \Gamma_G |^2}{| 1 - S_{11} \Gamma_G |^2} | S_{21} |^2 \frac{1}{1 - | \Gamma_{out} |^2}
 \end{align}
 <p>
-Operating Power gain;
+Operating Power gain;<br />
 </p>
 \begin{align}
   G_p &= \frac{\text{Power transferred to load}}{\text{Power into the network}} = \frac{P_L}{P_{in}}\\
   G_p &= \frac{1}{1 - | \Gamma_{{in}} |^2} | S_{21} |^2 \frac{1 - | \Gamma_L |^2}{| 1 - S_{22} \Gamma_L |^2}
 \end{align}
 <p>
-Maximum available gain;
+Maximum available gain;<br />
 </p>
 \begin{align}
   G_{\max} &= \frac{| S_{21} |}{| S_{12} |} \left( K - \sqrt{K^2 - 1} \right)\\
@@ -690,29 +688,27 @@ Maximum available gain;
 \end{align}
 </div>
 </div>
-
-<div id="outline-container-orgfb0feab" class="outline-4">
-<h4 id="orgfb0feab">Input Impedance/Admittance</h4>
-<div class="outline-text-4" id="text-orgfb0feab">
+<div id="outline-container-orgcd65fc8" class="outline-4">
+<h4 id="orgcd65fc8"><span class="section-number-4">3.1.6.</span> Input Impedance/Admittance</h4>
+<div class="outline-text-4" id="text-3-1-6">
 \begin{align}
 \Gamma_{in,1}&=S_{11}+\frac{S_{12}S_{21}}{1-S_{22}\Gamma_{L}} \\
 Y_{in,1}&=Y_{11}-\frac{Y_{12}Y_{21}}{Y_{22}+Y_{L}}
 \end{align}
 </div>
 </div>
-
-<div id="outline-container-org99b3f1e" class="outline-4">
-<h4 id="org99b3f1e">Stability Factors</h4>
-<div class="outline-text-4" id="text-org99b3f1e">
+<div id="outline-container-org32ec154" class="outline-4">
+<h4 id="org32ec154"><span class="section-number-4">3.1.7.</span> Stability Factors</h4>
+<div class="outline-text-4" id="text-3-1-7">
 <p>
-For stability, K&gt;1 and \(| \Delta | < 1\) where (<a href="#citeproc_bib_item_4">Orfanidis 2016</a>);
+For stability, K&gt;1 and \(| \Delta | < 1\) where (<a href="#citeproc_bib_item_4">Orfanidis 2016</a>);<br />
 </p>
 
 \begin{equation}
   K = \frac{1 - | S_{11} |^2 - | S_{22} |^2 + | \Delta |^2}{2 | S_{12} S_{21} |} \text{    and    } \Delta = S_{11} S_{22} - S_{12} S_{21}
 \end{equation}
 <p>
-\(\mu\) parameters (Edwards-Sinsky stability parameter) enable to identify the source of instability as source or load. For unconditional stability, \(\mu_1 > 1\) and \(\mu_2 > 1\).
+\(\mu\) parameters (Edwards-Sinsky stability parameter) enable to identify the source of instability as source or load. For unconditional stability, \(\mu_1 > 1\) and \(\mu_2 > 1\).<br />
 </p>
 \begin{align}
   \mu_1 &= \frac{1 - | S_{11} |^2}{| S_{22} - \Delta S^{\ast}_{11} | + | S_{12}  S_{21} |}\\
@@ -720,12 +716,11 @@ For stability, K&gt;1 and \(| \Delta | < 1\) where (<a href="#citeproc_bib_item_
 \end{align}
 </div>
 </div>
-
-<div id="outline-container-orgd03a659" class="outline-4">
-<h4 id="orgd03a659">Simultaneous Conjugate Matching</h4>
-<div class="outline-text-4" id="text-orgd03a659">
+<div id="outline-container-org183ff95" class="outline-4">
+<h4 id="org183ff95"><span class="section-number-4">3.1.8.</span> Simultaneous Conjugate Matching</h4>
+<div class="outline-text-4" id="text-3-1-8">
 <p>
-For simultaneous conjugate match at both ports of a 2-port network, source and load reflection coefficients can be calculated as (<a href="#citeproc_bib_item_4">Orfanidis 2016</a>):
+For simultaneous conjugate match at both ports of a 2-port network, source and load reflection coefficients can be calculated as (<a href="#citeproc_bib_item_4">Orfanidis 2016</a>):<br />
 </p>
 \begin{align}
   \Delta &= S_{11} S_{22} - S_{12} S_{21}\\
@@ -737,32 +732,30 @@ For simultaneous conjugate match at both ports of a 2-port network, source and l
   \Gamma_L &= \frac{B_2 \mp \sqrt{B_2^2 - 4 | C_2^2 |}}{2 C_2}
 \end{align}
 <p>
-where (-) should be used when \(B_1 > 0\) or \(B_2 > 0\), (+) otherwise.
+where (-) should be used when \(B_1 > 0\) or \(B_2 > 0\), (+) otherwise.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org6729620" class="outline-4">
-<h4 id="org6729620">Extract Load Reflection Coefficient</h4>
-<div class="outline-text-4" id="text-org6729620">
+<div id="outline-container-orgb7cd63b" class="outline-4">
+<h4 id="orgb7cd63b"><span class="section-number-4">3.1.9.</span> Extract Load Reflection Coefficient</h4>
+<div class="outline-text-4" id="text-3-1-9">
 <p>
-Extracting \(\Gamma_L\) at port 2, if \(\Gamma_{{in}}\) of the circuit at port 1 is given.
+Extracting \(\Gamma_L\) at port 2, if \(\Gamma_{{in}}\) of the circuit at port 1 is given.<br />
 </p>
 \begin{equation}
   \Gamma_L = \frac{\Gamma_{{in}} - S_{11}}{S_{12} S_{21} +  (\Gamma_{{in}} - S_{11}) S_{22}}
 \end{equation}
 </div>
 </div>
-
-<div id="outline-container-orgbec789d" class="outline-4">
-<h4 id="orgbec789d">Matrix Definition Of Typical Networks</h4>
-<div class="outline-text-4" id="text-orgbec789d">
+<div id="outline-container-org05d2eee" class="outline-4">
+<h4 id="org05d2eee"><span class="section-number-4">3.1.10.</span> Matrix Definition Of Typical Networks</h4>
+<div class="outline-text-4" id="text-3-1-10">
 </div>
-<ul class="org-ul">
-<li><a id="orgbca0832"></a>Ideal Elements<br />
-<div class="outline-text-5" id="text-orgbca0832">
+<ol class="org-ol">
+<li><a id="org875784e"></a>Ideal Elements<br />
+<div class="outline-text-5" id="text-3-1-10-1">
 <p>
-S-Parameters for ideal 3-port junction
+S-Parameters for ideal 3-port junction<br />
 </p>
 \begin{equation}
   S = \frac{1}{3} \left(\begin{array}{ccc}
@@ -772,7 +765,7 @@ S-Parameters for ideal 3-port junction
   \end{array}\right)
 \end{equation}
 <p>
-S-Parameters for ideal 4-port junction
+S-Parameters for ideal 4-port junction<br />
 </p>
 
 \begin{equation}
@@ -785,7 +778,7 @@ S-Parameters for ideal 4-port junction
 \end{equation}
 
 <p>
-S-Parameters for ideal quadrature coupler (Ports: 1-input, 2-direct output, 3-isolated, 4-farther output)
+S-Parameters for ideal quadrature coupler (Ports: 1-input, 2-direct output, 3-isolated, 4-farther output)<br />
 </p>
 \begin{equation}
   S = \frac{1}{\sqrt{2}} \left(\begin{array}{cccc}
@@ -796,7 +789,7 @@ S-Parameters for ideal quadrature coupler (Ports: 1-input, 2-direct output, 3-is
   \end{array}\right)
 \end{equation}
 <p>
-S-Parameters for ideal N-port junction
+S-Parameters for ideal N-port junction<br />
 </p>
 \begin{equation}
   S = \left(\begin{array}{cccc}
@@ -808,7 +801,7 @@ S-Parameters for ideal N-port junction
   \frac{2}{N}
 \end{equation}
 <p>
-S-Parameters for Ideal N-way power divider with port-1 as input
+S-Parameters for Ideal N-way power divider with port-1 as input<br />
 </p>
 \begin{equation}
   S = \left(\begin{array}{ccccc}
@@ -820,34 +813,33 @@ S-Parameters for Ideal N-way power divider with port-1 as input
   \end{array}\right)
 \end{equation}
 <p>
-where;
+where;<br />
 </p>
 
 <ul class="org-ul">
-<li>For lossless network with no isolation and no matching at output ports, \(x= \frac{1}{\sqrt{N}}\), \(y = \frac{1 - N}{N}\), \(z = \frac{1}{N}\) (we can also multiply both y and z by \(j\) ).</li>
+<li>For lossless network with no isolation and no matching at output ports, \(x= \frac{1}{\sqrt{N}}\), \(y = \frac{1 - N}{N}\), \(z = \frac{1}{N}\) (we can also multiply both y and z by \(j\) ).<br /></li>
 
-<li>For lossy network but with isolation and matching at all ports, \(x = \frac{1}{\sqrt{N}}\), \(y = 0\), \(z = 0\).</li>
+<li>For lossy network but with isolation and matching at all ports, \(x = \frac{1}{\sqrt{N}}\), \(y = 0\), \(z = 0\).<br /></li>
 </ul>
 </div>
 </li>
-</ul>
+</ol>
 </div>
-
-<div id="outline-container-orgd56eec3" class="outline-4">
-<h4 id="orgd56eec3">Frequency-Dependent Special Elements</h4>
-<div class="outline-text-4" id="text-orgd56eec3">
+<div id="outline-container-orgdca3fa9" class="outline-4">
+<h4 id="orgdca3fa9"><span class="section-number-4">3.1.11.</span> Frequency-Dependent Special Elements</h4>
+<div class="outline-text-4" id="text-3-1-11">
 </div>
-<ul class="org-ul">
-<li><a id="org972c777"></a>4-Port Symmetric Coupled Line S-Parameters<br />
-<div class="outline-text-5" id="text-org972c777">
+<ol class="org-ol">
+<li><a id="org6a3c891"></a>4-Port Symmetric Coupled Line S-Parameters<br />
+<div class="outline-text-5" id="text-3-1-11-1">
 
-<div id="orgae4bcae" class="figure">
-<p><img src="images/coupledline.svg" alt="coupledline.svg" class="org-svg" />
+<div id="org70b7358" class="figure">
+<p><img src="images/coupledline.svg" alt="coupledline.svg" class="org-svg" /><br />
 </p>
 </div>
 
 <p>
-Reference is (<a href="#citeproc_bib_item_3">Jahn et al., n.d.</a>) (Port 3 and 4 is switched with respect to the reference)
+Reference is (<a href="#citeproc_bib_item_3">Jahn et al., n.d.</a>) (Port 3 and 4 is switched with respect to the reference)<br />
 </p>
 \begin{align}
   S_{11} &= S_{22} = S_{33} = S_{44} = X_e + X_o\\
@@ -856,7 +848,7 @@ Reference is (<a href="#citeproc_bib_item_3">Jahn et al., n.d.</a>) (Port 3 and 
   S_{14} &= S_{41} = S_{23} = S_{32} = Y_e - Y_o
 \end{align}
 <p>
-where
+where<br />
 </p>
 \begin{align}
   X_{e, o} &= \frac{(Z_{e, o}^2 - Z_0^2) \sinh (\gamma_{e, o} l)}{2 D_{e, o}}\\
@@ -866,57 +858,53 @@ where
 \end{align}
 </div>
 </li>
-</ul>
+</ol>
 </div>
-
-<div id="outline-container-orga096c8f" class="outline-4">
-<h4 id="orga096c8f">Connecting Nodes</h4>
-<div class="outline-text-4" id="text-orga096c8f">
+<div id="outline-container-orgb18e35d" class="outline-4">
+<h4 id="orgb18e35d"><span class="section-number-4">3.1.12.</span> Connecting Nodes</h4>
+<div class="outline-text-4" id="text-3-1-12">
 <p>
-References used for this section are (<a href="#citeproc_bib_item_7">Wedge and Rutledge 1993</a>)  and (<a href="#citeproc_bib_item_3">Jahn et al., n.d.</a>)  (Section 4.3 Computing with S-Parameters).
+References used for this section are (<a href="#citeproc_bib_item_7">Wedge and Rutledge 1993</a>)  and (<a href="#citeproc_bib_item_3">Jahn et al., n.d.</a>)  (Section 4.3 Computing with S-Parameters).<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgec1f9eb" class="outline-4">
-<h4 id="orgec1f9eb">Connecting S-Parameter Blocks Together</h4>
-<div class="outline-text-4" id="text-orgec1f9eb">
+<div id="outline-container-org69429f4" class="outline-4">
+<h4 id="org69429f4"><span class="section-number-4">3.1.13.</span> Connecting S-Parameter Blocks Together</h4>
+<div class="outline-text-4" id="text-3-1-13">
 <p>
-Two networks defined by <code>SPFILE</code> objects can be connected together to create a new network and <code>SPFILE</code> object. Assume that we have networks \(S\) and \(T\). We want to create a new network by connecting port \(k\)
-of network \(S\) to port \(l\) of circuit \(T\). Then S-Parameters of new network can be calculated as;
+Two networks defined by <code>SPFILE</code> objects can be connected together to create a new network and <code>SPFILE</code> object. Assume that we have networks \(S\) and \(T\). We want to create a new network by connecting port \(k\)<br />
+of network \(S\) to port \(l\) of circuit \(T\). Then S-Parameters of new network can be calculated as;<br />
 </p>
 \begin{equation}
   S_{i j}' = S_{i j} + \frac{S_{k j} T_{l l} S_{i k}}{1 - S_{k k} T_{l l}}
 \end{equation}
 <p>
-with \(i\) and \(j\) being ports of \(S\), and;
+with \(i\) and \(j\) being ports of \(S\), and;<br />
 </p>
 \begin{equation}
   S_{m j}' = \frac{S_{k j} T_{m l}}{1 - S_{k k} T_{l l}}
 \end{equation}
 <p>
-with \(m\) being a port of \(T\). With these formulae the new S-Parameter network is built.
+with \(m\) being a port of \(T\). With these formulae the new S-Parameter network is built.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org58135da" class="outline-4">
-<h4 id="org58135da">Connecting Two Ports of a Network</h4>
-<div class="outline-text-4" id="text-org58135da">
+<div id="outline-container-org3b0d1a5" class="outline-4">
+<h4 id="org3b0d1a5"><span class="section-number-4">3.1.14.</span> Connecting Two Ports of a Network</h4>
+<div class="outline-text-4" id="text-3-1-14">
 <p>
-If ports \(l\) and \(k\) of the same circuit \(S\) are connected and both ports are removed, the new S-parameters are calculated by:
+If ports \(l\) and \(k\) of the same circuit \(S\) are connected and both ports are removed, the new S-parameters are calculated by:<br />
 </p>
 \begin{equation}
   S_{i j}' = S_{i j} + \frac{S_{k j} S_{i l} (1 - S_{l k}) + S_{l j} S_{i k} (1 - S_{k l}) + S_{k j} S_{l l} S_{i k} + S_{l j} S_{k k} S_{i l}}{(1 - S_{k l}) (1 - S_{l k}) - S_{k k} S_{l l}}
 \end{equation}
 </div>
 </div>
-
-<div id="outline-container-org7e5da9c" class="outline-4">
-<h4 id="org7e5da9c">Extracting multiport S-Parameters of chip</h4>
-<div class="outline-text-4" id="text-org7e5da9c">
+<div id="outline-container-org30356b7" class="outline-4">
+<h4 id="org30356b7"><span class="section-number-4">3.1.15.</span> Extracting multiport S-Parameters of chip</h4>
+<div class="outline-text-4" id="text-3-1-15">
 <p>
-If number of measurement ports is equal to number of die ports, unique solution is obtained. If there are unmeasured non-die ports, their termination impedance affects the result too. Ports are sorted first. \(b_1\) and \(a_1\) are signals of measurement ports. \(b_2\) and \(a_2\) are signals of chip ports (but \(b\) and \(a\) switched places compared to standard definition). Then extracted chip S-Parameters are derived as:
+If number of measurement ports is equal to number of die ports, unique solution is obtained. If there are unmeasured non-die ports, their termination impedance affects the result too. Ports are sorted first. \(b_1\) and \(a_1\) are signals of measurement ports. \(b_2\) and \(a_2\) are signals of chip ports (but \(b\) and \(a\) switched places compared to standard definition). Then extracted chip S-Parameters are derived as:<br />
 </p>
 
 \begin{align} b_1 = S_M a_1 \end{align}
@@ -928,81 +916,78 @@ If number of measurement ports is equal to number of die ports, unique solution 
   S_C = \left[\begin{array}{c} S_{21} (S_M - S_{11})^{- 1} S_{12} + S_{22} \end{array}\right]^{- 1}
 \end{equation}
 <p>
-Everything in this equation can also be matrices.
+Everything in this equation can also be matrices.<br />
 </p>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org8fd1c57" class="outline-3">
-<h3 id="org8fd1c57">Passivity</h3>
-<div class="outline-text-3" id="text-org8fd1c57">
+<div id="outline-container-orgb6969ed" class="outline-3">
+<h3 id="orgb6969ed"><span class="section-number-3">3.2.</span> Passivity</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orgf923ae1" class="outline-4">
-<h4 id="orgf923ae1">Passivity Test</h4>
-<div class="outline-text-4" id="text-orgf923ae1">
+<div id="outline-container-org9da0d61" class="outline-4">
+<h4 id="org9da0d61"><span class="section-number-4">3.2.1.</span> Passivity Test</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <p>
-A good summary of passivity of S-Parameters is given in (S-Parameter Quality Metrics, Yuriy Shlepnev, 2014).
+A good summary of passivity of S-Parameters is given in (S-Parameter Quality Metrics, Yuriy Shlepnev, 2014).<br />
 </p>
 
 <p>
-\(P_{net} = \sum (|a_n|^2 - |b_n|^2) = a^H (I - S^H S) a\) should be \(\geqslant 0\) for all possible \(a\). This is a matrix form called Hermitian Quadratic Form. To satisfy this condition, following condition should be met:
+\(P_{net} = \sum (|a_n|^2 - |b_n|^2) = a^H (I - S^H S) a\) should be \(\geqslant 0\) for all possible \(a\). This is a matrix form called Hermitian Quadratic Form. To satisfy this condition, following condition should be met:<br />
 </p>
 \begin{equation}
   \text{eigenvalues} (I - S^HS) \geqslant 0 \text{    or   eigenvalues} (S^H S) \leqslant 1
 \end{equation}
 <p>
-where \(S^H\) is conjugate transpose of \(S\).
+where \(S^H\) is conjugate transpose of \(S\).<br />
 </p>
 
 <p>
-These conditions should be met from DC to infinite frequency which can only be met approximately by S-Parameter files.
+These conditions should be met from DC to infinite frequency which can only be met approximately by S-Parameter files.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgbd520cb" class="outline-4">
-<h4 id="orgbd520cb">Passivity Enforcement</h4>
-<div class="outline-text-4" id="text-orgbd520cb">
+<div id="outline-container-orgff1dfb5" class="outline-4">
+<h4 id="orgff1dfb5"><span class="section-number-4">3.2.2.</span> Passivity Enforcement</h4>
+<div class="outline-text-4" id="text-3-2-2">
 <p>
-Passivity is enforced with the algorithm given in (<a href="#citeproc_bib_item_1">Doshi, Sureka, and Pupalaikis 2012</a>). Suppose that \(k\) eigenvalues are larger than 1 and violates passivity criteria.
+Passivity is enforced with the algorithm given in (<a href="#citeproc_bib_item_1">Doshi, Sureka, and Pupalaikis 2012</a>). Suppose that \(k\) eigenvalues are larger than 1 and violates passivity criteria.<br />
 </p>
 \begin{equation} \sigma_j = 1 + | \delta_j | \qquad j \in \{ 1, 2, \ldots ., k \} \end{equation}
 <p>
-Procedure:
+Procedure:<br />
 </p>
 <ul class="org-ul">
-<li>Perform SVD (singular value decomposition) of the matrix</li>
+<li>Perform SVD (singular value decomposition) of the matrix<br /></li>
 </ul>
 \begin{equation} S = U \Sigma V^H \end{equation}
 <ul class="org-ul">
-<li>Let \(\Delta \Sigma\) be a diagonal matrix of size n, with the diagonal entries defined as</li>
+<li>Let \(\Delta \Sigma\) be a diagonal matrix of size n, with the diagonal entries defined as<br /></li>
 </ul>
 \begin{equation} \Delta \Sigma_{j, j} = \left\{\begin{array}{l} | \delta_j | & j \in \{ 1, 2, \ldots ., k \}\\ 0 & j > k \end{array}\right.
 \end{equation}
 <ul class="org-ul">
-<li>Now form the matrix \(\Delta S\) such that</li>
+<li>Now form the matrix \(\Delta S\) such that<br /></li>
 </ul>
 \begin{equation} \Delta S = U \Delta \Sigma V^H \end{equation}
 <ul class="org-ul">
-<li>Thus passivity-enforced s-parameter matrix is given as:</li>
+<li>Thus passivity-enforced s-parameter matrix is given as:<br /></li>
 </ul>
 \begin{equation} S_{{passive}} = S - \Delta S \end{equation}
 </div>
 </div>
+<div id="outline-container-orgf3d6cba" class="outline-4">
+<h4 id="orgf3d6cba"><span class="section-number-4">3.2.3.</span> Block For Conversion Between 2 Single-Ended Ports and 2 Even-Odd Mode Ports</h4>
+<div class="outline-text-4" id="text-3-2-3">
 
-<div id="outline-container-orgec360d6" class="outline-4">
-<h4 id="orgec360d6">Block For Conversion Between 2 Single-Ended Ports and 2 Even-Odd Mode Ports</h4>
-<div class="outline-text-4" id="text-orgec360d6">
-
-<div id="org3c86780" class="figure">
-<p><img src="images/mixedblock.svg" alt="mixedblock.svg" class="org-svg" />
+<div id="orge13815e" class="figure">
+<p><img src="images/mixedblock.svg" alt="mixedblock.svg" class="org-svg" /><br />
 </p>
 <p><span class="figure-number">Figure 1: </span>Block diagram</p>
 </div>
 
 <p>
-Single-Ended Ports: 1,2, Even Port:3, Odd Port: 4
+Single-Ended Ports: 1,2, Even Port:3, Odd Port: 4<br />
 </p>
 \begin{equation}
   S = \frac{1}{\sqrt{2}} \left[ \begin{array}{cccc}
@@ -1013,19 +998,19 @@ Single-Ended Ports: 1,2, Even Port:3, Odd Port: 4
   \end{array} \right]
 \end{equation}
 <p>
-If the single ended S-Parameters to be converted are referenced to 50\(\Omega\), then in the final S-Parameters including common and differential ports, differential port impedance is 100\(\Omega\) and common mode impedance is 25\(\Omega\).
+If the single ended S-Parameters to be converted are referenced to 50\(\Omega\), then in the final S-Parameters including common and differential ports, differential port impedance is 100\(\Omega\) and common mode impedance is 25\(\Omega\).<br />
 </p>
 
 
-<div id="orgb86ead8" class="figure">
-<p><img src="images/mixedblock1.svg" alt="mixedblock1.svg" class="org-svg" />
+<div id="org1e9d5ff" class="figure">
+<p><img src="images/mixedblock1.svg" alt="mixedblock1.svg" class="org-svg" /><br />
 </p>
 <p><span class="figure-number">Figure 2: </span>Block diagram</p>
 </div>
 
 
 <p>
-The same equation is used to convert single-ended a and b to mixed-mode counterparts.
+The same equation is used to convert single-ended a and b to mixed-mode counterparts.<br />
 </p>
 
 \begin{align}
@@ -1054,7 +1039,7 @@ b_{mm}&=Mb_{se}
   \end{array} \right]
 \end{equation}
 <p>
-where
+where<br />
 </p>
 \begin{align}
 \label{eq:2}
@@ -1063,21 +1048,19 @@ a_{d2}&=a_{2}-a_{4}
 \end{align}
 </div>
 </div>
-
-
-<div id="outline-container-org184c5af" class="outline-4">
-<h4 id="org184c5af">Network Parameters Of Basic Elements</h4>
-<div class="outline-text-4" id="text-org184c5af">
+<div id="outline-container-orgc501708" class="outline-4">
+<h4 id="orgc501708"><span class="section-number-4">3.2.4.</span> Network Parameters Of Basic Elements</h4>
+<div class="outline-text-4" id="text-3-2-4">
 </div>
-<ul class="org-ul">
-<li><a id="orgb0f4d85"></a>2-Port Series Element<br />
-<div class="outline-text-5" id="text-orgb0f4d85">
+<ol class="org-ol">
+<li><a id="org7cd6221"></a>2-Port Series Element<br />
+<div class="outline-text-5" id="text-3-2-4-1">
 <p>
-ABCD Parameter:
+ABCD Parameter:<br />
 </p>
 \begin{equation} {ABCD} = \left[ \begin{array}{cc} 1 & Z\\ 0 & 1 \end{array} \right] \end{equation}
 <p>
-S-Parameters:
+S-Parameters:<br />
 </p>
 \begin{equation}
   {Sm} = \left[ \begin{array}{cc}
@@ -1086,20 +1069,19 @@ S-Parameters:
   \end{array} \right]
 \end{equation}
 <p>
-Y-Parameter:
+Y-Parameter:<br />
 </p>
 \begin{equation} {Ym} = \left[ \begin{array}{cc} Y & - Y\\ - Y & Y \end{array} \right] \end{equation}
 </div>
 </li>
-
-<li><a id="orga6a745e"></a>2-Port Shunt Element<br />
-<div class="outline-text-5" id="text-orga6a745e">
+<li><a id="org49f6ef4"></a>2-Port Shunt Element<br />
+<div class="outline-text-5" id="text-3-2-4-2">
 <p>
-ABCD Parameter:
+ABCD Parameter:<br />
 </p>
 \begin{equation} {ABCD} = \left[ \begin{array}{cc} 1 & 0\\ Y & 1 \end{array} \right] \end{equation}
 <p>
-S-Parameters:
+S-Parameters:<br />
 </p>
 \begin{equation}
   {Sm} = \left[ \begin{array}{cc}
@@ -1108,16 +1090,15 @@ S-Parameters:
   \end{array} \right]
 \end{equation}
 <p>
-Z-Parameter:
+Z-Parameter:<br />
 </p>
 \begin{equation} {Zm} = \left[ \begin{array}{cc} Z & Z\\ Z & Z \end{array} \right] \end{equation}
 </div>
 </li>
-
-<li><a id="org10a6123"></a>Transmission Line<br />
-<div class="outline-text-5" id="text-org10a6123">
+<li><a id="org1935bbb"></a>Transmission Line<br />
+<div class="outline-text-5" id="text-3-2-4-3">
 <p>
-ABCD Parameter:
+ABCD Parameter:<br />
 </p>
 \begin{equation}
   {ABCD} = \left[ \begin{array}{ll}
@@ -1126,7 +1107,7 @@ ABCD Parameter:
   \end{array} \right]
 \end{equation}
 <p>
-For lossless transmission lines;
+For lossless transmission lines;<br />
 </p>
 \begin{equation}
   {ABCD} = \left[ \begin{array}{ll}
@@ -1135,7 +1116,7 @@ For lossless transmission lines;
   \end{array} \right]
 \end{equation}
 <p>
-T-Matrix:
+T-Matrix:<br />
 </p>
 \begin{equation}
   {Tm} = \left[ \begin{array}{cc}
@@ -1144,11 +1125,11 @@ T-Matrix:
   \end{array} \right]
 \end{equation}
 <p>
-Y-Matrix:
+Y-Matrix:<br />
 </p>
 
 <p>
-\(\text{}\)
+\(\text{}\)<br />
 </p>
 \begin{equation}
   Y = \left[ \begin{array}{cc}
@@ -1158,9 +1139,8 @@ Y-Matrix:
 \end{equation}
 </div>
 </li>
-
-<li><a id="org5cd8e93"></a>Impedance Step<br />
-<div class="outline-text-5" id="text-org5cd8e93">
+<li><a id="org68c6f6f"></a>Impedance Step<br />
+<div class="outline-text-5" id="text-3-2-4-4">
 \begin{equation}
   {T} = \frac{1}{2 \sqrt{Z_1 Z_2}} \left[ \begin{array}{cc}
     Z_2 + Z_1 & Z_2 - Z_1\\
@@ -1169,12 +1149,11 @@ Y-Matrix:
 \end{equation}
 </div>
 </li>
+<li><a id="orgec0bf26"></a>Pi-Network<br />
+<div class="outline-text-5" id="text-3-2-4-5">
 
-<li><a id="orgcb279b0"></a>Pi-Network<br />
-<div class="outline-text-5" id="text-orgcb279b0">
-
-<div id="org04fece0" class="figure">
-<p><img src="images/pi_network_ditaa.svg" alt="pi_network_ditaa.svg" class="org-svg" />
+<div id="org69d7651" class="figure">
+<p><img src="images/pi_network_ditaa.svg" alt="pi_network_ditaa.svg" class="org-svg" /><br />
 </p>
 </div>
 
@@ -1197,13 +1176,11 @@ Z = \left[\begin{matrix}\frac{Y_{2} Z_{s} + 1}{Y_{1} Y_{2} Z_{s} + Y_{1} + Y_{2}
 \end{equation}
 </div>
 </li>
+<li><a id="org9ccacab"></a>Tee-Network<br />
+<div class="outline-text-5" id="text-3-2-4-6">
 
-
-<li><a id="orgd5c6a84"></a>Tee-Network<br />
-<div class="outline-text-5" id="text-orgd5c6a84">
-
-<div id="orgb926d7d" class="figure">
-<p><img src="images/tee_network_ditaa.svg" alt="tee_network_ditaa.svg" class="org-svg" />
+<div id="org2694432" class="figure">
+<p><img src="images/tee_network_ditaa.svg" alt="tee_network_ditaa.svg" class="org-svg" /><br />
 </p>
 </div>
 
@@ -1225,21 +1202,19 @@ Y = \left[\begin{matrix}\frac{Y_{p} Z_{2} + 1}{Y_{p} Z_{1} Z_{2} + Z_{1} + Z_{2}
 \end{equation}
 </div>
 </li>
-
-<li><a id="org3e9fcc3"></a>Transformer<br />
-<div class="outline-text-5" id="text-org3e9fcc3">
+<li><a id="org1d7a9aa"></a>Transformer<br />
+<div class="outline-text-5" id="text-3-2-4-7">
 <p>
-N turns at port-1, 1 turn at port-2.
+N turns at port-1, 1 turn at port-2.<br />
 </p>
 \begin{equation} {ABCD} = \left[ \begin{array}{cc} N & 0\\ 0 & \frac{1}{N} \end{array} \right] \end{equation}
 </div>
 </li>
-</ul>
+</ol>
 </div>
-
-<div id="outline-container-org9f0cf2c" class="outline-4">
-<h4 id="org9f0cf2c">Derivation of Z-Matrix from S-Matrix</h4>
-<div class="outline-text-4" id="text-org9f0cf2c">
+<div id="outline-container-org92d2f6d" class="outline-4">
+<h4 id="org92d2f6d"><span class="section-number-4">3.2.5.</span> Derivation of Z-Matrix from S-Matrix</h4>
+<div class="outline-text-4" id="text-3-2-5">
 \begin{align}
   V &= ZI\\
   b &= Sa = SF (V + Z_r I) \qquad \text{  (from \ref{eqab})}\\
@@ -1249,21 +1224,21 @@ N turns at port-1, 1 turn at port-2.
   Z I &= F^{- 1} (I_0 - S)^{- 1} (F Z_r^* + S F Z_r) I
 \end{align}
 <p>
-\(F\) and \(Z_r\) can be interchanged since they are both diagonal.  So,
+\(F\) and \(Z_r\) can be interchanged since they are both diagonal.  So,<br />
 </p>
 \begin{equation}
   Z = F^{- 1} (I_0 - S)^{- 1} (Z_r^* + S Z_r) F
 \end{equation}
 
 <p>
-Similarly,
+Similarly,<br />
 </p>
 \begin{equation}
   Y = F^{- 1} (Z_r^* + S Z_r)^{- 1} (I_0 - S) F
 \end{equation}
 
 <p>
-For real characteristic impedances,
+For real characteristic impedances,<br />
 </p>
 \begin{equation}
   Y = \sqrt{Y_r} (I_0 + S)^{- 1} (I_0 - S) \sqrt{Y_r}
@@ -1274,26 +1249,23 @@ For real characteristic impedances,
 </div>
 </div>
 </div>
-
-
-<div id="outline-container-org30962c2" class="outline-3">
-<h3 id="org30962c2">Transmission Lines</h3>
-<div class="outline-text-3" id="text-org30962c2">
+<div id="outline-container-org2562eb3" class="outline-3">
+<h3 id="org2562eb3"><span class="section-number-3">3.3.</span> Transmission Lines</h3>
+<div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-orged661e0" class="outline-4">
-<h4 id="orged661e0">Introduction</h4>
-<div class="outline-text-4" id="text-orged661e0">
+<div id="outline-container-org92fa15e" class="outline-4">
+<h4 id="org92fa15e"><span class="section-number-4">3.3.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-3-3-1">
 <p>
-Introduction.
+Introduction.<br />
 </p>
 </div>
 </div>
-
-<div id="outline-container-org5c87693" class="outline-4">
-<h4 id="org5c87693">Skin Depth</h4>
-<div class="outline-text-4" id="text-org5c87693">
+<div id="outline-container-orgb957728" class="outline-4">
+<h4 id="orgb957728"><span class="section-number-4">3.3.2.</span> Skin Depth</h4>
+<div class="outline-text-4" id="text-3-3-2">
 <p>
-According to <a href="https://en.wikipedia.org/wiki/Skin_effect">https://en.wikipedia.org/wiki/Skin_effect</a>:
+According to <a href="https://en.wikipedia.org/wiki/Skin_effect">https://en.wikipedia.org/wiki/Skin_effect</a>:<br />
 </p>
 \begin{equation}
   \delta = \sqrt{\frac{2}{\sigma \omega \mu}} \sqrt{\sqrt{1 + \left(
@@ -1301,61 +1273,58 @@ According to <a href="https://en.wikipedia.org/wiki/Skin_effect">https://en.wiki
 \end{equation}
 </div>
 </div>
-
-<div id="outline-container-org8abf1de" class="outline-4">
-<h4 id="org8abf1de">Incremental Inductance Rule</h4>
-<div class="outline-text-4" id="text-org8abf1de">
+<div id="outline-container-org3a4bc88" class="outline-4">
+<h4 id="org3a4bc88"><span class="section-number-4">3.3.3.</span> Incremental Inductance Rule</h4>
+<div class="outline-text-4" id="text-3-3-3">
 <p>
-Wheeler's Incremental Inductance Rule is frequently used to analyse conductor loss in transmission lines. The idea is that at high frequencies, for typical conductors, surface resistance is equal to surface reactance. Surface resistance is calculated by calculating surface reactance. Surface reactance is calculated by calculating inductance change of a lossless transmission line after shifting the boundary of conductor by \(\delta / 2\). The formula is:
+Wheeler's Incremental Inductance Rule is frequently used to analyse conductor loss in transmission lines. The idea is that at high frequencies, for typical conductors, surface resistance is equal to surface reactance. Surface resistance is calculated by calculating surface reactance. Surface reactance is calculated by calculating inductance change of a lossless transmission line after shifting the boundary of conductor by \(\delta / 2\). The formula is:<br />
 </p>
 \begin{equation}
   {Loss} ({Np} / m) = \frac{\omega}{2 Z_0} \frac{\delta \mu}{2 \mu_0} \frac{\partial L_z}{\partial x}
 \end{equation}
 <p>
-where \(L_z\) is inductance per unit length, \(x\) is offset from the conductor surface, \(\delta\) is skin depth, \(Z_0\) is characteristic impedance, \(\mu\) is magnetic permeability of conductor. Important notes to keep in mind for derivation:
+where \(L_z\) is inductance per unit length, \(x\) is offset from the conductor surface, \(\delta\) is skin depth, \(Z_0\) is characteristic impedance, \(\mu\) is magnetic permeability of conductor. Important notes to keep in mind for derivation:<br />
 </p>
 
 <p>
-1- \(\frac{\mu}{\mu_0}\) coeffcieint come from the fact that at the boundary, right inside the conductor, magnetic field is \(\mu_r = \frac{\mu}{\mu_0}\) times stronger than the external magnetic field right outside the conductor.
+1- \(\frac{\mu}{\mu_0}\) coeffcieint come from the fact that at the boundary, right inside the conductor, magnetic field is \(\mu_r = \frac{\mu}{\mu_0}\) times stronger than the external magnetic field right outside the conductor.<br />
 </p>
 
 <p>
-2- Magnetic field in the conductor is assumed to be uniformly distributed to a thickness of \(\delta / 2\).
+2- Magnetic field in the conductor is assumed to be uniformly distributed to a thickness of \(\delta / 2\).<br />
 </p>
 
 <p>
-In terms of characteristic impedance, following formula can also be used:
+In terms of characteristic impedance, following formula can also be used:<br />
 </p>
 \begin{equation}
   {Loss} ({Np} / m) = \frac{\omega}{2 Z_0} \frac{\delta \mu}{2 \mu_0} \frac{\partial Z}{\partial x}
   \frac{\sqrt{\varepsilon_{{eff}}}}{c_0}
 \end{equation}
 <p>
-where \(c_0\) is speed of light in vacuum and \(\varepsilon_{{eff}}\) is relative effective dielectric permittivity of the transmission line.
+where \(c_0\) is speed of light in vacuum and \(\varepsilon_{{eff}}\) is relative effective dielectric permittivity of the transmission line.<br />
 </p>
 
 <p>
-In this formula, during calculation of \(\frac{\partial Z}{\partial x}\) the same transmission line without dielectric filling can also be used with \(\varepsilon_{{eff}} = 1\). Mostly, inductance does not depend on the
-dielectric filling if it is non-magnetic.
+In this formula, during calculation of \(\frac{\partial Z}{\partial x}\) the same transmission line without dielectric filling can also be used with \(\varepsilon_{{eff}} = 1\). Mostly, inductance does not depend on the<br />
+dielectric filling if it is non-magnetic.<br />
 </p>
 
 <p>
-We need to multiply this with 8.68 (\(20 \log (e)\)) to convert the unit from Np/m to dB/m.
+We need to multiply this with 8.68 (\(20 \log (e)\)) to convert the unit from Np/m to dB/m.<br />
 </p>
 </div>
 </div>
 </div>
-
-
-<div id="outline-container-org3d7fd50" class="outline-3">
-<h3 id="org3d7fd50">De-Embedding, Calibration And Characterization</h3>
-<div class="outline-text-3" id="text-org3d7fd50">
+<div id="outline-container-org20aa422" class="outline-3">
+<h3 id="org20aa422"><span class="section-number-3">3.4.</span> De-Embedding, Calibration And Characterization</h3>
+<div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org4c70dd4" class="outline-4">
-<h4 id="org4c70dd4">De-embedding Block For 2-Port S-Parameters</h4>
-<div class="outline-text-4" id="text-org4c70dd4">
+<div id="outline-container-org1302f9e" class="outline-4">
+<h4 id="org1302f9e"><span class="section-number-4">3.4.1.</span> De-embedding Block For 2-Port S-Parameters</h4>
+<div class="outline-text-4" id="text-3-4-1">
 <p>
-The S-Parameters of a block to deembed a 2-port S-Parameter is:
+The S-Parameters of a block to deembed a 2-port S-Parameter is:<br />
 </p>
 \begin{equation}
   S^{- 1} = \frac{1}{S_{11} S_{22} - S_{12} S_{21}} \left[ \begin{array}{cc}
@@ -1363,12 +1332,11 @@ The S-Parameters of a block to deembed a 2-port S-Parameter is:
 \end{equation}
 </div>
 </div>
-
-<div id="outline-container-org6864c6c" class="outline-4">
-<h4 id="org6864c6c">Transition Extraction From Symmetric Measurements</h4>
-<div class="outline-text-4" id="text-org6864c6c">
+<div id="outline-container-orga65866c" class="outline-4">
+<h4 id="orga65866c"><span class="section-number-4">3.4.2.</span> Transition Extraction From Symmetric Measurements</h4>
+<div class="outline-text-4" id="text-3-4-2">
 <p>
-The derivation of formulae for extraction of transition parameters from THRU and LINE measurements taken by connecting the same transition back to back, is being given. The transition is assumed to be reciprocal. Assume that the T-Matrix(definition also used in the <code>mwtoolbox</code> package) of the transition is:
+The derivation of formulae for extraction of transition parameters from THRU and LINE measurements taken by connecting the same transition back to back, is being given. The transition is assumed to be reciprocal. Assume that the T-Matrix(definition also used in the <code>mwtoolbox</code> package) of the transition is:<br />
 </p>
 \begin{equation}
   \left[ \begin{array}{c} b_1\\ a_1 \end{array} \right] = \left[ \begin{array}{cc}
@@ -1377,7 +1345,7 @@ The derivation of formulae for extraction of transition parameters from THRU and
   \end{array} \right] \left[ \begin{array}{c} a_2\\ b_2 \end{array} \right]
 \end{equation}
 <p>
-Because of reciprocity, the T-Matrix of reversed transition is:
+Because of reciprocity, the T-Matrix of reversed transition is:<br />
 </p>
 \begin{equation}
   \left[ \begin{array}{cc}
@@ -1386,7 +1354,7 @@ Because of reciprocity, the T-Matrix of reversed transition is:
   \end{array} \right]
 \end{equation}
 <p>
-The T-Matrix of connecting line in LINE measurement is:
+The T-Matrix of connecting line in LINE measurement is:<br />
 </p>
 \begin{equation}
   \left[ \begin{array}{cc}
@@ -1395,7 +1363,7 @@ The T-Matrix of connecting line in LINE measurement is:
   \end{array} \right]
 \end{equation}
 <p>
-T-Matrix for LINE measurement (assuming \(\alpha = e^{- \gamma l}\)):
+T-Matrix for LINE measurement (assuming \(\alpha = e^{- \gamma l}\)):<br />
 </p>
 
 \begin{align}
@@ -1417,7 +1385,7 @@ T-Matrix for LINE measurement (assuming \(\alpha = e^{- \gamma l}\)):
   \end{array} \right]
 \end{align}
 <p>
-T-Matrix for THRU measurement (assuming \(\alpha = e^{- \gamma l}\)):
+T-Matrix for THRU measurement (assuming \(\alpha = e^{- \gamma l}\)):<br />
 </p>
 \begin{align}
   T_{{THRU}} &= \left[ \begin{array}{cc}
@@ -1433,13 +1401,13 @@ T-Matrix for THRU measurement (assuming \(\alpha = e^{- \gamma l}\)):
   \end{array} \right]
 \end{align}
 <p>
-For reciprocal networks,
+For reciprocal networks,<br />
 </p>
 \begin{equation}
   T_{11} T_{22} - T_{21} T_{12} = 1 \Rightarrow T_{12} = \frac{T_{11} T_{22}-1}{T_{21}}
 \end{equation}
 <p>
-So,
+So,<br />
 </p>
 \begin{equation}
   T_{{LINE}} = \left[ \begin{array}{cc}
@@ -1462,14 +1430,14 @@ So,
   \end{array} \right]
 \end{equation}
 <p>
-Let
+Let<br />
 </p>
 \begin{equation}
   a \triangleq \frac{T_{11}}{T_{21}} \text{ and } b \triangleq
   \frac{T_{22}}{T_{21}} = - \frac{1}{S_{22}}
 \end{equation}
 <p>
-Since we will have quadratic equations, it is best to target \(b\) variable first, since we know that its magnitude should be greater than 1. If we can solve \(b\), then
+Since we will have quadratic equations, it is best to target \(b\) variable first, since we know that its magnitude should be greater than 1. If we can solve \(b\), then<br />
 </p>
 \begin{align}
   a &= \frac{b + B}{D} \\
@@ -1477,36 +1445,36 @@ Since we will have quadratic equations, it is best to target \(b\) variable firs
   T_{21}^2 &= \frac{D}{b^2 - 1} \\
 \end{align}
 <p>
-With these formulae, the calculation of all cells of T-Matrix can go in this order: \(b \Rightarrow T_{21} \Rightarrow a \Rightarrow T_{11} \Rightarrow T_{22} \Rightarrow T_{11}\). Using these equations and after manipulating matrix equations the quadratic equation for \(b\) is obtained as:
+With these formulae, the calculation of all cells of T-Matrix can go in this order: \(b \Rightarrow T_{21} \Rightarrow a \Rightarrow T_{11} \Rightarrow T_{22} \Rightarrow T_{11}\). Using these equations and after manipulating matrix equations the quadratic equation for \(b\) is obtained as:<br />
 </p>
 \begin{align}
   b^2 (B D_1 - B_1 D) +& b (2 B (B D_1 - B_1 D) \notag \\
 +& D (A D_1 - A_1 D)) + (B^2 + A  D) (B D_1 - B_1 D) = 0
 \end{align}
 <p>
-This method is implemented in <code>rfnetwork</code> module with function <code>thru_line_deembedding</code>.
+This method is implemented in <code>rfnetwork</code> module with function <code>thru_line_deembedding</code>.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org84d3c75" class="outline-4">
-<h4 id="org84d3c75">Untermination Method</h4>
-<div class="outline-text-4" id="text-org84d3c75">
+<div id="outline-container-org9978e4e" class="outline-4">
+<h4 id="org9978e4e"><span class="section-number-4">3.4.3.</span> Untermination Method</h4>
+<div class="outline-text-4" id="text-3-4-3">
 
-<div id="org8bf9262" class="figure">
-<p><img src="images/untermination_block_tikz.png" alt="untermination_block_tikz.png" />
+<div id="org6e26db4" class="figure">
+<p><img src="images/untermination_block_tikz.png" alt="untermination_block_tikz.png" /><br />
 </p>
 <p><span class="figure-number">Figure 3: </span>Block diagram of the setup to use untermination method</p>
 </div>
 
 <p>
-This method is used to measure the performance of a 2-port structure with only 1-port measurements. The block diagram is shown in Figure <a href="#org8bf9262">3</a>. Reflection coefficient at port-1 of DUT while port-2 is terminated with a load impedance is given as;
+This method is used to measure the performance of a 2-port structure with only 1-port measurements. The block diagram is shown in Figure <a href="#org6e26db4">3</a>. Reflection coefficient at port-1 of DUT while port-2 is terminated with a load impedance is given as;<br />
 </p>
 \begin{equation}
 \label{eq:3}
 \Gamma_{in}=S_{11}+\frac{S_{12}S_{21}\Gamma_{L}}{1-S_{22}\Gamma_{L}}
 \end{equation}
 <p>
-where \(\Gamma_{L}\) is the reflection coefficient of load and \(S_{xx}\) are S-parameters of the DUT. This reflection coefficient is measured for 3 different load impedances. By this way, 3 equations are obtained to relate input reflection coefficients (\(\Gamma_{in}^{1,2,3}\)) to load reflection coefficients (\(\Gamma_{L}^{1,2,3}\)). These 3 equations are converted to a single matrix equation to solve for S-parameters.
+where \(\Gamma_{L}\) is the reflection coefficient of load and \(S_{xx}\) are S-parameters of the DUT. This reflection coefficient is measured for 3 different load impedances. By this way, 3 equations are obtained to relate input reflection coefficients (\(\Gamma_{in}^{1,2,3}\)) to load reflection coefficients (\(\Gamma_{L}^{1,2,3}\)). These 3 equations are converted to a single matrix equation to solve for S-parameters.<br />
 </p>
 \begin{align}
 \label{eq:4}
@@ -1527,47 +1495,45 @@ where \(\Gamma_{L}\) is the reflection coefficient of load and \(S_{xx}\) are S-
   \end{array} \right]
 \end{align}
 <p>
-In this formulation, \(S_{11}\), \(S_{22}\) and \(\Delta=S_{11}S_{22}-S_{12}S_{21}\) are calculated directly. \(S_{21}\) is calculated from \(\Delta\). There are 2 limitations of this technique:
+In this formulation, \(S_{11}\), \(S_{22}\) and \(\Delta=S_{11}S_{22}-S_{12}S_{21}\) are calculated directly. \(S_{21}\) is calculated from \(\Delta\). There are 2 limitations of this technique:<br />
 </p>
 <ol class="org-ol">
-<li>Reciprocity is assumed, so \(S_{12}=S_{21}\) which is usually the case.</li>
-<li>\(S_{21}\) can be calculated only with a sign (+/-) ambiguity.</li>
+<li>Reciprocity is assumed, so \(S_{12}=S_{21}\) which is usually the case.<br /></li>
+<li>\(S_{21}\) can be calculated only with a sign (+/-) ambiguity.<br /></li>
 </ol>
 
 <p>
-This technique can be used to measure microstrip-WG transition. WG side can be terminated with the following loads from WR12 calibration kit, while the measurements are done from PCB side using microstrip probe launchers.
+This technique can be used to measure microstrip-WG transition. WG side can be terminated with the following loads from WR12 calibration kit, while the measurements are done from PCB side using microstrip probe launchers.<br />
 </p>
 <ol class="org-ol">
-<li>Short</li>
-<li>Delay+Short (to implement a case close to open)</li>
-<li>Termination</li>
+<li>Short<br /></li>
+<li>Delay+Short (to implement a case close to open)<br /></li>
+<li>Termination<br /></li>
 </ol>
 <p>
-After the extraction, probe launcher should also be deembedded. For this purpose, PCB should have calibration structures to characterize launcher data. Launcher data can be extracted using TRL extraction. The tolerances on launcher data are also a source of error.
+After the extraction, probe launcher should also be deembedded. For this purpose, PCB should have calibration structures to characterize launcher data. Launcher data can be extracted using TRL extraction. The tolerances on launcher data are also a source of error.<br />
 </p>
 </div>
 </div>
 </div>
 </div>
-
-
-<div id="outline-container-orgd1b79ce" class="outline-2">
-<h2 id="orgd1b79ce">REFERENCES</h2>
-<div class="outline-text-2" id="text-orgd1b79ce">
+<div id="outline-container-orgc6ca301" class="outline-2">
+<h2 id="orgc6ca301"><span class="section-number-2">4.</span> REFERENCES</h2>
+<div class="outline-text-2" id="text-4">
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Doshi, Dr. Kaviyesh, Anirudh Sureka, and Peter J. Pupalaikis. 2012. “Fast and Optimal Algorithms for Enforcing Reciprocity, Passivity and Causality in S-Parameters.” <i>Designcon 2012</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Doshi, Dr. Kaviyesh, Anirudh Sureka, and Peter J. Pupalaikis. 2012. “Fast and Optimal Algorithms for Enforcing Reciprocity, Passivity and Causality in S-parameters.” <i>Designcon 2012</i>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Edwards, T. C., and M. B. Steer. 2016. <i>Foundations for Microstrip Design</i>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Jahn, Stefan, Michael Margraf, Vincent Habchi, and Raimund Jacob. n.d. <i>Qucs Manual</i>. <a href="http://qucs.sourceforge.net/docs/technical/technical.pdf">http://qucs.sourceforge.net/docs/technical/technical.pdf</a>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Orfanidis, Sophocles J. 2016. <i>Electromagnetic Waves and Antennas</i>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Pozar, D. M. 2005. <i>Microwave Engineering</i>. John Wiley and Sons.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Reveyrand, T. 2018. “Multiport Conversions between S, Z, Y, H, Abcd, and T Parameters.” In <i>2018 International Workshop on Integrated Nonlinear Microwave and Millimetre-Wave Circuits (Inmmic)</i>, 1–3. Brive La Gaillarde: IEEE. <a href="https://doi.org/10.1109/INMMIC.2018.8430023">https://doi.org/10.1109/INMMIC.2018.8430023</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Reveyrand, T. 2018. “Multiport Conversions between S, Z, Y, H, Abcd, and T Parameters.” In <i>2018 International Workshop on Integrated Nonlinear Microwave and Millimetre-wave Circuits (Inmmic)</i>, 1–3. Brive La Gaillarde: IEEE. <a href="https://doi.org/10.1109/INMMIC.2018.8430023">https://doi.org/10.1109/INMMIC.2018.8430023</a>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Wedge, S.W., and D.B. Rutledge. 1993. “Wave Computations for Microwave Education” 36 (1): 127–31. <a href="https://doi.org/10.1109/13.204831">https://doi.org/10.1109/13.204831</a>.</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-06 Di 17:04</p>
+<p class="date">Created: 2024-01-23 Di 13:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
